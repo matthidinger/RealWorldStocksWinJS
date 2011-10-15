@@ -82,7 +82,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DynamicLocalhost\SmartServiceHelper.cs" />
+    <Compile Include="DynamicLocalhost\DynamicLocalhost.cs" />
     <Compile Include="Framework\AppBootstrapper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\CollectionCountVisibilityConverter.cs" />
@@ -206,5 +206,5 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <Import Project="$(SolutionDir)\packages\DynamicLocalhost.1.0\tools\DynamicLocalhost.targets" />
+  <Import Project="$(SolutionDir)\packages\DynamicLocalhost.1.1\tools\DynamicLocalhost.targets" />
 </Project>
