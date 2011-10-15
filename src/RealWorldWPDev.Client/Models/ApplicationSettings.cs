@@ -33,7 +33,7 @@ namespace RealWorldWPDev.Client.Models
             // Compiling this app on MY machine, WebServiceBaseUrl will become: http://MATT-PC/RealWorldWPDev.Web/
             // The URL be automatically determined on each compile
             // Therefore no issues checking it in and getting latest on any developer machine
-            WebServiceBaseUrl = DynamicLocalhost.DynamicLocalhost.ReplaceLocalhost("http://localhost/RealWorldWPDev.Web/");
+            WebServiceBaseUrl = DynamicLocalhost.ReplaceLocalhost("http://localhost/RealWorldWPDev.Web/");
 #else
             WebServiceBaseUrl = "http://services.mydomain.com/v1/";
 #endif

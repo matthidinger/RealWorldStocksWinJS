@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
 
-namespace RealWorldWPDev.Client.DynamicLocalhost
+namespace RealWorldWPDev.Client
 {
     /// <summary>
     /// Utility class for dynamically resolving the hostname of the current development machine
