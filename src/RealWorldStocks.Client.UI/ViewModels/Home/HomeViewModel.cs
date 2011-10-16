@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using System;
+using Caliburn.Micro;
+using Microsoft.Phone.Scheduler;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.ViewModels.StockDetails;
 
@@ -36,7 +38,22 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
         public void BasicHttp()
         {
-            _navigation.UriFor<BasicHttpViewModel>().Navigate();
+            //_navigation.UriFor<BasicHttpViewModel>().Navigate();
+
+            var periodicTask = new PeriodicTask("StocksAgent")
+                                   {
+                                       Description = "Update stocks",
+                                       ExpirationTime = DateTime.Now.AddDays(14)
+                                   };
+
+            // If the agent is already registered with the system
+            if (ScheduledActionService.Find(periodicTask.Name) == null)
+            {
+                ScheduledActionService.Add(periodicTask);
+            }
+
+
+            ScheduledActionService.LaunchForTest(periodicTask.Name, TimeSpan.FromSeconds(1));
         }
     }
 }

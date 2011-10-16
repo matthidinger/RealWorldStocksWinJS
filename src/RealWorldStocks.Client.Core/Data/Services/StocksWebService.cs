@@ -14,7 +14,7 @@ namespace RealWorldStocks.Client.Core.Data.Services
         public StocksWebService()
         {
 #if DEBUG
-            BaseUrl = DynamicLocalhost.DynamicLocalhost.ReplaceLocalhost("http://localhost/RealWorldStocks.Web/");
+            BaseUrl = DynamicLocalhost.ReplaceLocalhost("http://localhost/RealWorldStocks.Web/");
 #else
             BaseUrl = "http://services.mydomain.com/v1/";
 #endif
