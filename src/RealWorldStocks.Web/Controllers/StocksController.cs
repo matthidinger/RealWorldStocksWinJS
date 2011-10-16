@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Web.Mvc;
 using RealWorldStocks.Client.Models;
+using RealWorldStocks.Web.Helpers;
 
 namespace RealWorldStocks.Web.Controllers
 {
+    [AllowJsonGet]
     public class StocksController : Controller
     {
         public ActionResult GetSnapshots(string[] symbols)
@@ -22,7 +24,7 @@ namespace RealWorldStocks.Web.Controllers
                 .ToList();
                             
 
-            return Json(model, JsonRequestBehavior.AllowGet);
+            return Json(model);
         }
 
 
@@ -37,7 +39,7 @@ namespace RealWorldStocks.Web.Controllers
                                    Volume = rand.Next(50000, 50000000)
                                };
 
-            return Json(snapshot, JsonRequestBehavior.AllowGet);
+            return Json(snapshot);
         }
     }
 }

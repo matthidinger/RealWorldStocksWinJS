@@ -17,7 +17,7 @@ namespace RealWorldStocks.Client.Data
         public static void BeginGetRequest<T>(string url, Action<HttpResponse<T>> callback)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
-            Log.Info("Beginning HTTP Request: {0}", request.RequestUri);
+            Log.Info("HTTP Request: {0}", request.RequestUri);
             try
             {
                 request.BeginGetResponse(iar =>
@@ -36,7 +36,7 @@ namespace RealWorldStocks.Client.Data
                             using (var reader = new StreamReader(response.GetResponseStream()))
                             {
                                 string json = reader.ReadToEnd().Replace("&amp;", "&");
-                                Log.Info("Received HTTP Response: {0}\r\n", json);
+                                Log.Info("HTTP Response: {0}\r\n", json);
                                 var model = SerializationHelper.Deserialize<T>(json);
 
                                 Execute.OnUIThread(() => callback(new HttpResponse<T>(model)));
