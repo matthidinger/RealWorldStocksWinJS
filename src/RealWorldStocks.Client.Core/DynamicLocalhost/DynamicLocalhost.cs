@@ -1,9 +1,10 @@
 using System;
 using System.IO;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
 
-namespace RealWorldStocks.Client.Core.DynamicLocalhost
+namespace RealWorldStocks.Client.Core
 {
     /// <summary>
     /// Utility class for dynamically resolving the hostname of the current development machine
@@ -15,10 +16,11 @@ namespace RealWorldStocks.Client.Core.DynamicLocalhost
         /// </summary>
         public static string GetLocalHostname()
         {
-            var file = Application.GetResourceStream(new Uri("DynamicLocalhost\\LocalHostname.txt", UriKind.Relative));
+            var asm = new AssemblyName(Assembly.GetExecutingAssembly().FullName);
+            var file = Application.GetResourceStream(new Uri(string.Format("/{0};component/DynamicLocalhost\\LocalHostname.txt", asm.Name), UriKind.Relative));
             if (file == null)
             {
-                throw new FileNotFoundException("Unable to locate the DynamicLocalhost\\LocalHostname.txt file in the XAP. Make sure it exists and the Build Action is Content");
+                throw new FileNotFoundException("Unable to locate the DynamicLocalhost\\LocalHostname.txt file in the XAP. Make sure it exists and the Build Action is Resource");
             }
             using (var sr = new StreamReader(file.Stream))
             {
@@ -32,7 +34,7 @@ namespace RealWorldStocks.Client.Core.DynamicLocalhost
         public static string ReplaceLocalhost(string url)
         {
             var hostname = GetLocalHostname();
-            if(string.IsNullOrEmpty(hostname))
+            if (string.IsNullOrEmpty(hostname))
             {
                 return url;
             }
