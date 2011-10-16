@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Web.Helpers;
@@ -11,7 +12,7 @@ namespace RealWorldStocks.Web.Controllers
     {
         public ActionResult GetSnapshots(string[] symbols)
         {
-            //Thread.Sleep(5000);
+            Thread.Sleep(5000);
             var rand = new Random();
             var model = symbols.
                 Select(symbol => new StockSnapshot

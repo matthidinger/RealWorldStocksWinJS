@@ -4,7 +4,6 @@ using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
-using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Client.BackgroundAgent
 {
