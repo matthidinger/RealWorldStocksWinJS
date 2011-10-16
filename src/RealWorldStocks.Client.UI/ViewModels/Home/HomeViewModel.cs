@@ -36,7 +36,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
         }
 
 
-        public void BasicHttp()
+        public void ActivateAgent()
         {
             //_navigation.UriFor<BasicHttpViewModel>().Navigate();
 
