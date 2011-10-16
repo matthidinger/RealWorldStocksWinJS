@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="RealWorldStocks.Client.Views.Home.HomeWatchListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+	<UserControl.Resources>
+		<DataTemplate x:Key="WatchListItemTemplate">
+            <HyperlinkButton Width="480" Style="{StaticResource StretchingContentControl}" Height="60" cal:Message.Attach="LoadSymbol($dataContext)">
+                <Grid>                
+                    <Grid.ColumnDefinitions>
+					    <ColumnDefinition/>
+					    <ColumnDefinition Width="110"/>
+					    <ColumnDefinition Width="110"/>
+				    </Grid.ColumnDefinitions>
+				    <TextBlock Text="{Binding Symbol}" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
+				    <TextBlock Text="{Binding LastPrice}" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
+				    <Grid Grid.Column="2" VerticalAlignment="Center">
+					    <Grid.RowDefinitions>
+						    <RowDefinition Height="0.5*"/>
+						    <RowDefinition Height="0.5*"/>
+					    </Grid.RowDefinitions>
+					    <TextBlock Text="{Binding DaysChange}" Style="{StaticResource PhoneTextNormalStyle}"/>
+					    <TextBlock Text="{Binding DaysChangePercent}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				    </Grid>
+			    </Grid>
+            </HyperlinkButton>
+        </DataTemplate>
+	</UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <ListBox x:Name="WatchList" ItemTemplate="{StaticResource WatchListItemTemplate}">
+          
+        </ListBox>
+    </Grid>
+</UserControl>
