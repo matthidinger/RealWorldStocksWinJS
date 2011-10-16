@@ -68,7 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\RealWorldStocks.Client\Models\StockSnapshot.cs">
+    <Compile Include="..\RealWorldStocks.Client.Core\Models\StockSnapshot.cs">
       <Link>Models\StockSnapshot.cs</Link>
     </Compile>
     <Compile Include="Controllers\StocksController.cs" />
