@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using RealWorldStocks.Client.Models;
+using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Web.Helpers;
 
 namespace RealWorldStocks.Web.Controllers
