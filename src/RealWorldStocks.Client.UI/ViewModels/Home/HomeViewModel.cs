@@ -34,26 +34,5 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 .WithParam(m => m.Symbol, snapshot.Symbol)
                 .Navigate();
         }
-
-
-        public void ActivateAgent()
-        {
-            //_navigation.UriFor<BasicHttpViewModel>().Navigate();
-
-            var periodicTask = new PeriodicTask("StocksAgent")
-                                   {
-                                       Description = "Update stocks",
-                                       ExpirationTime = DateTime.Now.AddDays(14)
-                                   };
-
-            // If the agent is already registered with the system
-            if (ScheduledActionService.Find(periodicTask.Name) == null)
-            {
-                ScheduledActionService.Add(periodicTask);
-            }
-
-
-            ScheduledActionService.LaunchForTest(periodicTask.Name, TimeSpan.FromSeconds(1));
-        }
     }
 }
