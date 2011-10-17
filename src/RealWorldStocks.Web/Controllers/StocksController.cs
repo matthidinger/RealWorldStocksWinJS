@@ -12,7 +12,8 @@ namespace RealWorldStocks.Web.Controllers
     {
         public ActionResult GetSnapshots(string[] symbols)
         {
-            Thread.Sleep(5000);
+            // Sleep here to highlight the Loading indicator in the app
+            Thread.Sleep(2000);
             var rand = new Random();
             var model = symbols.
                 Select(symbol => new StockSnapshot

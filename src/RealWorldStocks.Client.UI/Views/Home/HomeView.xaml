@@ -11,7 +11,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    Style="{StaticResource TransitionPageStyle}"
+    Style="{StaticResource DefaultPageTransitionStyle}"
     toolkit:TiltEffect.IsTiltEnabled="true"
     SupportedOrientations="Portrait" Orientation="Portrait" 
     shell:SystemTray.IsVisible="True">
@@ -23,18 +23,12 @@
     	</Grid.RowDefinitions>
 
         <controls:Pivot x:Name="Items" Title="{StaticResource AppNameUpper}">
-            <!--<controls:Pivot.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="/Resources/Images/chicago2.jpg" Opacity="0.35"/>
-
-            </controls:Pivot.Background>-->
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding DisplayName}" />
                 </DataTemplate>
             </controls:Pivot.HeaderTemplate>
         </controls:Pivot>
-        <Button x:Name="ActivateAgent" Content="Activate Agent" Grid.Row="1"/>
-
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

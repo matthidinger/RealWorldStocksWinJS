@@ -37,6 +37,7 @@ namespace RealWorldStocks.Client.UI.Framework
 
         static void AddCustomConventions()
         {
+            // TODO: Make issue for CM to use Tap conventions by default for WP7 apps
             ConventionManager.AddElementConvention<HyperlinkButton>(HyperlinkButton.ContentProperty, "DataContext", "Tap");
 
             ConventionManager.AddElementConvention<Pivot>(Pivot.ItemsSourceProperty, "SelectedItem", "SelectionChanged").ApplyBinding =
