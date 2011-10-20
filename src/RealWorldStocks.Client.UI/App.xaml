@@ -8,6 +8,7 @@
                 <ResourceDictionary Source="Assets/Constants.xaml"/>
                 <ResourceDictionary Source="Assets/Styles.xaml"/>
                 <ResourceDictionary Source="Assets/Converters.xaml"/>
+                <ResourceDictionary Source="Themes/Generic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <Framework:AppBootstrapper x:Key="bootstrapper" />

@@ -81,6 +81,8 @@
     <Compile Include="Helpers\IsolatedStorageHelper.cs" />
     <Compile Include="Models\ApplicationSettings.cs" />
     <Compile Include="Models\GlobalData.cs" />
+    <Compile Include="Models\IRefreshable.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\StockSnapshot.cs" />
     <Compile Include="Models\WatchList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,5 +11,6 @@
     <converters:ToLowercaseConverter x:Key="ToLowercaseConverter"/>
     <converters:RelativeDateTimeConverter x:Key="RelativeDateTimeConverter" />
     <converters:CollectionCountVisibilityConverter x:Key="CollectionCountVisibilityConverter" />
+    <converters:PriceChangeColorConverter x:Key="PriceChangeColorConverter" />
 
 </ResourceDictionary>
