@@ -32,7 +32,7 @@ namespace RealWorldStocks.Web.Controllers
                             Company = columns[1],
                             OpeningPrice = decimal.Parse(columns[2], CultureInfo.InvariantCulture),
                             LastPrice = decimal.Parse(columns[3], CultureInfo.InvariantCulture),
-                            Volume = int.Parse(columns[4].Replace(Environment.NewLine, string.Empty))
+                            Volume = int.Parse(columns[4])
                         };
 
             return Json(model);
