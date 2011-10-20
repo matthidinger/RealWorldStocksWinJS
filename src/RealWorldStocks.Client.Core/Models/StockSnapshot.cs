@@ -9,32 +9,20 @@ namespace RealWorldStocks.Client.Core.Models
 
         public decimal OpeningPrice { get; set; }
         public decimal LastPrice { get; set; }
-        public decimal DaysChange
-        {
-            get { return LastPrice - OpeningPrice; }
-        }
+        public decimal DaysChange { get; set; }
 
-        public decimal DaysChangePercent
-        {
-            get { return LastPrice / OpeningPrice; }
-        }
-
-        public string DaysChangePercentFormatted
-        {
-            get
-            {
-                return DaysChange > 0 ? DaysChangePercent.ToString("P2") : string.Format("-{0:P2}", DaysChangePercent);
-            }
-        }
+        public string DaysChangePercentFormatted { get; set; }
 
         public string DaysChangeFormatted
         {
-            get { return DaysChange > 0 ? string.Format("+{0:00}", DaysChange) : DaysChange.ToString("00"); }
+            get { return DaysChange > 0 ? string.Format("+{0:0.00}", DaysChange) : DaysChange.ToString("0.00"); }
         }
 
         public decimal DaysRangeMin { get; set; }
         public decimal DaysRangeMax { get; set; }
 
         public int Volume { get; set; }
+
+        public decimal PreviousClose { get; set; }
     }
 }

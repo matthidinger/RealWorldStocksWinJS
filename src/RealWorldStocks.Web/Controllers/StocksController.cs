@@ -20,18 +20,21 @@ namespace RealWorldStocks.Web.Controllers
         {
             var client = new WebClient();
             var yahooData = client.DownloadString(
-                string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snol1k3", String.Join("+", symbols))
+                string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snol1vpc1p2", String.Join("+", symbols))
                 ).TrimEnd('\r', '\n');
 
             var model = from line in yahooData.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)
-                        let columns = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")
+                        let columns = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").Select(s => s.Replace("\"", "")).ToList()
                         select new StockSnapshot
                         {
                             Symbol = columns[0],
                             Company = columns[1],
                             OpeningPrice = decimal.Parse(columns[2], CultureInfo.InvariantCulture),
                             LastPrice = decimal.Parse(columns[3], CultureInfo.InvariantCulture),
-                            Volume = int.Parse(columns[4])
+                            Volume = int.Parse(columns[4]),
+                            PreviousClose = decimal.Parse(columns[5], CultureInfo.InvariantCulture),
+                            DaysChange = decimal.Parse(columns[6], CultureInfo.InvariantCulture),
+                            DaysChangePercentFormatted = columns[7]     
                         };
 
             return Json(model);
