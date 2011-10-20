@@ -5,11 +5,10 @@ using System.Web.Mvc;
 using System.Net;
 using System.Diagnostics;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Web.Helpers;
-using RealWorldStocks.Web.Extensions;
-using System.Text.RegularExpressions;
 
 namespace RealWorldStocks.Web.Controllers
 {
@@ -25,7 +24,7 @@ namespace RealWorldStocks.Web.Controllers
                 ).TrimEnd('\r', '\n');
 
             var model = from line in yahooData.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)
-                        let columns = line.SplitCSV().ToList()
+                        let columns = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")
                         select new StockSnapshot
                         {
                             Symbol = columns[0],
