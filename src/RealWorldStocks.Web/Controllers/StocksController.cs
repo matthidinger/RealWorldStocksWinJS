@@ -2,8 +2,14 @@
 using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
+using System.Net;
+using System.Diagnostics;
+using System.Globalization;
+
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Web.Helpers;
+using RealWorldStocks.Web.Extensions;
+using System.Text.RegularExpressions;
 
 namespace RealWorldStocks.Web.Controllers
 {
@@ -13,20 +19,21 @@ namespace RealWorldStocks.Web.Controllers
     {
         public ActionResult GetSnapshots(string[] symbols)
         {
-            // Sleep here to highlight the Loading indicator in the app
-            Thread.Sleep(2000);
-            var rand = new Random();
-            var model = symbols.
-                Select((symbol, index) => new StockSnapshot
-                                     {
-                                         Symbol = symbol,
-                                         Company = "Company " + index,
-                                         OpeningPrice = rand.Next(5, 600),
-                                         LastPrice = rand.Next(5, 600),
-                                         Volume = rand.Next(50000, 50000000)
-                                     })
-                .ToList();
-                            
+            var client = new WebClient();
+            var yahooData = client.DownloadString(
+                string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snol1k3", String.Join("+", symbols))
+                ).TrimEnd('\r', '\n');
+
+            var model = from line in yahooData.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)
+                        let columns = line.SplitCSV().ToList()
+                        select new StockSnapshot
+                        {
+                            Symbol = columns[0],
+                            Company = columns[1],
+                            OpeningPrice = decimal.Parse(columns[2], CultureInfo.InvariantCulture),
+                            LastPrice = decimal.Parse(columns[3], CultureInfo.InvariantCulture),
+                            Volume = int.Parse(columns[4].Replace(Environment.NewLine, string.Empty))
+                        };
 
             return Json(model);
         }
@@ -52,16 +59,7 @@ namespace RealWorldStocks.Web.Controllers
 
         public ActionResult GetSnapshot(string symbol)
         {
-            var rand = new Random();
-            var snapshot = new StockSnapshot
-                               {
-                                   Symbol = symbol,
-                                   OpeningPrice = rand.Next(5, 600),
-                                   LastPrice = rand.Next(5, 600),
-                                   Volume = rand.Next(50000, 50000000)
-                               };
-
-            return Json(snapshot);
+            return GetSnapshots(new[] { symbol });
         }
     }
 }
