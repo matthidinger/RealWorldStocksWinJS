@@ -29,18 +29,28 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
         {
             yield return BusyIndictator.Show("Loading watch list...");
 
-            var request = _stocksWebService.GetWatchListSnapshots().Execute();
-            yield return request;
+            var fake = new List<StockSnapshot>
+                           {
+                               new StockSnapshot {Symbol = "MSFT"},
+                               new StockSnapshot {Symbol = "AAPL"},
+                               new StockSnapshot {Symbol = "AMZN"},
+                               new StockSnapshot {Symbol = "GOOG"},
+                           };
 
-            // TODO: Handle errors
-            if(!request.Response.HasError)
-            {
-                WatchList.RepopulateObservableCollection(request.Response.Model);
-            }
-            else
-            {
+            WatchList.RepopulateObservableCollection(fake);
+
+            //var request = _stocksWebService.GetWatchListSnapshots().Execute();
+            //yield return request;
+
+            //// TODO: Handle errors
+            //if(!request.Response.HasError)
+            //{
+            //    WatchList.RepopulateObservableCollection(request.Response.Model);
+            //}
+            //else
+            //{
                 
-            }
+            //}
 
             yield return BusyIndictator.Hide();
         }

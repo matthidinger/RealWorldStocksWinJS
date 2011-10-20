@@ -8,5 +8,6 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
         {
             DisplayName = "news";
         }
+
     }
 }

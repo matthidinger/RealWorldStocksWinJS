@@ -11,10 +11,7 @@
             get { return LastPrice - OpeningPrice; }
         }
 
-        public decimal DaysChangePercent
-        {
-            get { return OpeningPrice / LastPrice; }
-        }
+        public decimal DaysChangePercent { get; set; }
 
         public decimal DaysRangeMin { get; set; }
         public decimal DaysRangeMax { get; set; }
