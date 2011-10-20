@@ -1,31 +1,19 @@
-﻿using System;
-using Caliburn.Micro;
-using Microsoft.Phone.Scheduler;
+﻿using Caliburn.Micro;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.ViewModels.StockDetails;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home
 {
-    public class HomeViewModel : Conductor<IScreen>.Collection.OneActive
+    public class HomeViewModel : Conductor<IScreen>.Collection.OneActive, IRefreshable
     {
         private readonly INavigationService _navigation;
-        private readonly HomeWatchListViewModel _watchList;
-        private readonly HomeNewsViewModel _news;
 
-        public HomeViewModel(INavigationService navigation, HomeWatchListViewModel watchList, HomeNewsViewModel news)
+        public HomeViewModel(INavigationService navigation, HomeWatchListViewModel watchList, HomeNewsViewModel news, HomeQuoteViewModel quote)
         {
             _navigation = navigation;
-
-            _watchList = watchList;
-            _watchList.ActivateWith(this);
-
-            _news = news;
-            Items.Add(_news);
-        }
-
-        protected override void OnViewReady(object view)
-        {
-            ActivateItem(_watchList);
+            Items.Add(watchList);
+            Items.Add(news);
+            Items.Add(quote);
         }
 
         public void LoadSymbol(StockSnapshot snapshot)
@@ -33,6 +21,13 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             _navigation.UriFor<StockDetailsViewModel>()
                 .WithParam(m => m.Symbol, snapshot.Symbol)
                 .Navigate();
+        }
+
+        public void RefreshData()
+        {
+            var refreshableChild = ActiveItem as IRefreshable;
+            if (refreshableChild != null)
+                refreshableChild.RefreshData();
         }
     }
 }

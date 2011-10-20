@@ -68,6 +68,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\RealWorldStocks.Client.Core\Models\News.cs">
+      <Link>Models\News.cs</Link>
+    </Compile>
     <Compile Include="..\RealWorldStocks.Client.Core\Models\StockSnapshot.cs">
       <Link>Models\StockSnapshot.cs</Link>
     </Compile>
@@ -76,6 +79,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AllowJsonGetAttribute.cs" />
+    <Compile Include="Helpers\NoCacheAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

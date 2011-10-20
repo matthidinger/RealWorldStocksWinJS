@@ -28,6 +28,7 @@ namespace RealWorldStocks.Client.UI.Framework
             _container.Singleton<HomeViewModel>();
             _container.Singleton<HomeNewsViewModel>();
             _container.Singleton<HomeWatchListViewModel>();
+            _container.Singleton<HomeQuoteViewModel>();
 
             _container.PerRequest<BasicHttpViewModel>();
             _container.PerRequest<StockDetailsViewModel>();
