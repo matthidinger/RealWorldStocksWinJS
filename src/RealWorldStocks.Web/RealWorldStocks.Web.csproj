@@ -75,7 +75,6 @@
       <Link>Models\StockSnapshot.cs</Link>
     </Compile>
     <Compile Include="Controllers\StocksController.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
