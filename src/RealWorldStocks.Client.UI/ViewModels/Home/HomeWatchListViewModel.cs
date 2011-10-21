@@ -61,6 +61,8 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             });
         }
 
+        // TODO: Come up with a system to disable the Refresh button when already refreshing?
+
         public IApplicationBar ApplicationBar
         {
             get

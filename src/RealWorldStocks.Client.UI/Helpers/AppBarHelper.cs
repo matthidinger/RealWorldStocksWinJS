@@ -11,9 +11,21 @@ namespace RealWorldStocks.Client.UI.Helpers
     // TODO: Ask Rob to make this public in CM 1.3
     public class AppBarButtonTrigger : TriggerBase<PhoneApplicationPage>
     {
+        private readonly IApplicationBarMenuItem _button;
+
         public AppBarButtonTrigger(IApplicationBarMenuItem button)
         {
-            button.Click += ButtonClicked;
+            _button = button;
+        }
+
+        protected override void OnAttached()
+        {
+            _button.Click += ButtonClicked;
+        }
+
+        protected override void OnDetaching()
+        {
+            _button.Click -= ButtonClicked;
         }
 
         void ButtonClicked(object sender, EventArgs e)
@@ -34,8 +46,11 @@ namespace RealWorldStocks.Client.UI.Helpers
                                          {
                                              var pageAppBar = page.ApplicationBar;
                                              var controllerAppBar = appBarController.ApplicationBar;
+                                             var triggers = Interaction.GetTriggers(page);
 
                                              pageAppBar.Buttons.Clear();
+                                             triggers.OfType<AppBarButtonTrigger>().ToList().ForEach(trigger => triggers.Remove(trigger));
+
                                              foreach (var button in controllerAppBar.Buttons)
                                              {
                                                  // TODO: Is there a built-in Caliburn helper to do this? Maybe in ViewModelBinder?
@@ -44,7 +59,6 @@ namespace RealWorldStocks.Client.UI.Helpers
                                                  {
                                                      var parsedTrigger = Parser.Parse(page, caliburnButton.Message).First();
                                                      var trigger = new AppBarButtonTrigger(caliburnButton);
-                                                     var triggers = Interaction.GetTriggers(page);
                                                      var actionMessages = parsedTrigger.Actions.OfType<ActionMessage>().ToList();
                                                      actionMessages.Apply(x =>
                                                      {
@@ -62,6 +76,14 @@ namespace RealWorldStocks.Client.UI.Helpers
                                              pageAppBar.IsVisible = controllerAppBar.IsVisible;
                                              pageAppBar.Mode = controllerAppBar.Mode;
                                              pageAppBar.IsMenuEnabled = controllerAppBar.IsMenuEnabled;
+
+                                             pageAppBar.StateChanged += (s3, e3)
+                                                                        =>
+                                                                            {
+                                                                                pageAppBar.Opacity = e3.IsMenuVisible
+                                                                                                         ? 0.99
+                                                                                                         : 0;
+                                                                            };
                                          };
             }
         }
