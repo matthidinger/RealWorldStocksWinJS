@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Caliburn.Micro;
+using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
 using RealWorldStocks.Client.Core.Models;
+using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home
 {
-    public class HomeQuoteViewModel : Screen
+    public class HomeQuoteViewModel : Screen, IAppBarController
     {
         private readonly IStocksWebService _stocksWebService;
 
@@ -51,5 +54,18 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 NotifyOfPropertyChange(() => Snapshot);
             }
         }
+
+        public IApplicationBar ApplicationBar
+        {
+            get
+            {
+                return new ApplicationBar
+                           {
+                               Mode = ApplicationBarMode.Minimized
+                           };
+            }
+        }
+
+        public event EventHandler AppBarChanged = delegate { };
     }
 }

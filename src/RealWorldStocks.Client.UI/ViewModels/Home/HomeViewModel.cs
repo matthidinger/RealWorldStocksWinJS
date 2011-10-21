@@ -3,6 +3,7 @@ using Caliburn.Micro;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Models;
+using RealWorldStocks.Client.UI.Framework;
 using RealWorldStocks.Client.UI.Helpers;
 using RealWorldStocks.Client.UI.ViewModels.StockDetails;
 
@@ -36,6 +37,24 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
         {
             _navigation.UriFor<StockDetailsViewModel>()
                 .WithParam(m => m.Symbol, snapshot.Symbol)
+                .Navigate();
+        }
+
+        public void Add()
+        {
+            // TODO: Support adding stocks to watch list
+        }
+
+
+        public void About()
+        {
+            _navigation.UriFor<SettingsViewModel>()
+                .Navigate();
+        }
+
+        public void Settings()
+        {
+            _navigation.UriFor<SettingsViewModel>()
                 .Navigate();
         }
 
