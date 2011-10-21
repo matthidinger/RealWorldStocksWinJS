@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using Caliburn.Micro;
 using Microsoft.Phone.Controls;
 using RealWorldStocks.Client.Core.Data.Services;
+using RealWorldStocks.Client.UI.Controls;
 using RealWorldStocks.Client.UI.ViewModels;
 using RealWorldStocks.Client.UI.ViewModels.Home;
 using RealWorldStocks.Client.UI.ViewModels.StockDetails;
@@ -21,13 +22,18 @@ namespace RealWorldStocks.Client.UI.Framework
             LogManager.GetLog = type => new DebugLog();
 
             _container = new PhoneContainer(RootFrame);
+            _container.RegisterPhoneServices();
 
             _container.Singleton<IStocksWebService, StocksWebService>();
 
-            _container.RegisterPhoneServices();
+
             _container.Singleton<HomeViewModel>();
             _container.Singleton<HomeNewsViewModel>();
             _container.Singleton<HomeWatchListViewModel>();
+            _container.Singleton<HomeQuoteViewModel>();
+
+            _container.Singleton<SettingsViewModel>();
+
 
             _container.PerRequest<BasicHttpViewModel>();
             _container.PerRequest<StockDetailsViewModel>();
@@ -39,6 +45,7 @@ namespace RealWorldStocks.Client.UI.Framework
         {
             // TODO: Make issue for CM to use Tap conventions by default for WP7 apps
             ConventionManager.AddElementConvention<HyperlinkButton>(HyperlinkButton.ContentProperty, "DataContext", "Tap");
+            ConventionManager.AddElementConvention<WatermarkedTextBox>(WatermarkedTextBox.TextProperty, "DataContext", "TextChanged");
 
             ConventionManager.AddElementConvention<Pivot>(Pivot.ItemsSourceProperty, "SelectedItem", "SelectionChanged").ApplyBinding =
              (viewModelType, path, property, element, convention) =>

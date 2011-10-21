@@ -7,14 +7,24 @@ namespace RealWorldStocks.Client.UI.Framework
 {
     public class BusyIndictator : IResult
     {
-        public static BusyIndictator Show(string busyText = "")
+        public static BusyIndictator ShowResult(string busyText = "")
         {
             return new BusyIndictator(true, busyText);
         }
 
-        public static BusyIndictator Hide()
+        public static BusyIndictator HideResult()
         {
             return new BusyIndictator(false);
+        }
+
+        public static void Show(string busyText = "")
+        {
+            new BusyIndictator(true, busyText).Execute(new ActionExecutionContext());
+        }
+
+        public static void Hide()
+        {
+            new BusyIndictator(false).Execute(new ActionExecutionContext());
         }
 
 
@@ -29,23 +39,28 @@ namespace RealWorldStocks.Client.UI.Framework
 
         public void Execute(ActionExecutionContext context)
         {
-            var frame = (PhoneApplicationFrame)App.Current.RootVisual;
-            var page = frame.Content as PhoneApplicationPage;
-            if(page != null)
-            {
-                var progressIndicator = new ProgressIndicator
-                                            {
-                                                IsVisible = _isBusy,
-                                                IsIndeterminate = true,
-                                                Text = _busyText
-                                            };
+            Caliburn.Micro.Execute.OnUIThread(() =>
+                                                  {
 
-                page.SetValue(SystemTray.ProgressIndicatorProperty, progressIndicator);
-            }
+                                                      var frame = (PhoneApplicationFrame)App.Current.RootVisual;
+                                                      var page = frame.Content as PhoneApplicationPage;
+                                                      if (page != null)
+                                                      {
+                                                          var progressIndicator = new ProgressIndicator
+                                                                                      {
+                                                                                          IsVisible = _isBusy,
+                                                                                          IsIndeterminate = true,
+                                                                                          Text = _busyText
+                                                                                      };
 
-            Completed(this, new ResultCompletionEventArgs());
+                                                          page.SetValue(SystemTray.ProgressIndicatorProperty, progressIndicator);
+                                                      }
+
+                                                      Completed(this, new ResultCompletionEventArgs());
+                                                  });
+
         }
 
-        public event EventHandler<ResultCompletionEventArgs> Completed = delegate {};
+        public event EventHandler<ResultCompletionEventArgs> Completed = delegate { };
     }
 }

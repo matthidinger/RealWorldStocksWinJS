@@ -26,23 +26,7 @@
             <TextBlock x:Name="PageName" Text="get snapshot" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<Grid.RowDefinitions>
-        		<RowDefinition Height="0.119*"/>
-        		<RowDefinition Height="0.881*"/>
-        	</Grid.RowDefinitions>
-            <Grid>
-            	<Grid.ColumnDefinitions>
-            		<ColumnDefinition Width="0.724*"/>
-            		<ColumnDefinition Width="0.276*"/>
-            	</Grid.ColumnDefinitions>
-            
-        		<TextBox x:Name="Symbol"/>
-        		<Button x:Name="GetSnapshot" Content="Go" Grid.Column="1"/>
-        	</Grid>
-            <TextBlock Text="{Binding Snapshot.Symbol}" Grid.Row="1"/>
-            
-        </Grid>
+      
     </Grid>
  
 

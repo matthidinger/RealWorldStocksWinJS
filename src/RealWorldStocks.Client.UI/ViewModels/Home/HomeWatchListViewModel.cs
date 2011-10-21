@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
 using Caliburn.Micro;
 using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
@@ -8,7 +9,7 @@ using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home
 {
-    public class HomeWatchListViewModel : Screen
+    public class HomeWatchListViewModel : Screen, IRefreshable
     {
         private readonly IStocksWebService _stocksWebService;
 
@@ -19,16 +20,15 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             WatchList = new BindableCollection<StockSnapshot>();
         }
 
-        protected override void OnViewLoaded(object view)
+        public BindableCollection<StockSnapshot> WatchList { get; set; }
+
+        protected override void OnInitialize()
         {
-            // TODO: Move this to OnViewReady in CM 1.3
-            Coroutine.BeginExecute(UpdateWatchList().GetEnumerator());
+            RefreshData();
         }
 
         private IEnumerable<IResult> UpdateWatchList()
         {
-            yield return BusyIndictator.Show("Loading watch list...");
-
             var fake = new List<StockSnapshot>
                            {
                                new StockSnapshot {Symbol = "MSFT"},
@@ -52,9 +52,20 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 
             //}
 
-            yield return BusyIndictator.Hide();
+            yield return BusyIndictator.HideResult();
         }
 
-        public BindableCollection<StockSnapshot> WatchList { get; set; } 
+        public void RefreshData()
+        {
+            BusyIndictator.Show("Loading watch list...");
+
+            // TODO: Move this to OnViewReady in CM 1.3
+            // For now sleep for a bit to let the panorama load smoothly
+            ThreadPool.QueueUserWorkItem(callback =>
+            {
+                Thread.Sleep(1000);
+                Coroutine.BeginExecute(UpdateWatchList().GetEnumerator());
+            });
+        }
     }
 }

@@ -8,7 +8,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
-                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" Margin="{TemplateBinding Padding}" VerticalAlignment="Stretch"/>
+                    <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

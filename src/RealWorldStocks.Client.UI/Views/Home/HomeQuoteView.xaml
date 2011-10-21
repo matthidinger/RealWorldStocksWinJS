@@ -1,0 +1,28 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:RealWorldStocks.Client.UI.Controls" x:Class="RealWorldStocks.Client.UI.Views.Home.HomeQuoteView"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="405*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.724*"/>
+                <ColumnDefinition Width="0.276*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="GetSnapshot" Content="Go" Grid.Column="1"/>
+        	<Controls:WatermarkedTextBox x:Name="Symbol" WatermarkText="enter symbol" />
+        </Grid>
+        <TextBlock Text="{Binding Snapshot.Symbol}" Grid.Row="1" />
+    </Grid>
+</UserControl>
