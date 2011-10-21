@@ -30,8 +30,7 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0">
-            <cal:AppBarButton IconUri="/Assets/Icons/appbar.add.rest.png" Text="add" Message="Add"/>
-            <cal:AppBarButton IconUri="/Assets/Icons/appbar.refresh.rest.png" Text="refresh" Message="RefreshData"/>
+           
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
@@ -44,7 +43,7 @@
             </controls:Panorama.TitleTemplate>
             <controls:Panorama.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controlsPrimitives:PanoramaPanel x:Name="panel" Margin="0,0,0,75"/>
+                    <controlsPrimitives:PanoramaPanel x:Name="panel" Margin="0,0,0,75" />
                 </ItemsPanelTemplate>
             </controls:Panorama.ItemsPanel>
             <controls:Panorama.Background>

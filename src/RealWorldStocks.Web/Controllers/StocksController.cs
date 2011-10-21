@@ -18,6 +18,7 @@ namespace RealWorldStocks.Web.Controllers
     {
         public ActionResult GetSnapshots(string[] symbols)
         {
+            // TODO: Change parsing to TryParse, sometimes API returns N/A
             var client = new WebClient();
             var yahooData = client.DownloadString(
                 string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snol1vpc1p2", String.Join("+", symbols))

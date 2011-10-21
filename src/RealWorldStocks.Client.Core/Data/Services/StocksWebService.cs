@@ -36,10 +36,15 @@ namespace RealWorldStocks.Client.Core.Data.Services
             var queryString = new QueryString
                                   {
                                       {"symbols", "MSFT"},
+                                      {"symbols", "NOK"},
                                       {"symbols", "AAPL"},
                                       {"symbols", "GOOG"},
                                       {"symbols", "AMZN"},
-                                      {"symbols", "NFLX"}
+                                      {"symbols", "NFLX"},
+                                      {"symbols", "IBM"},
+                                      {"symbols", "A"},
+                                      {"symbols", "T"},
+                                      {"symbols", "S"},
                                   };
 
             return CreateHttpRequest<IEnumerable<StockSnapshot>>("Stocks/GetSnapshots", queryString);

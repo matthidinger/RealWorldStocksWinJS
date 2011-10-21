@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace RealWorldStocks.Client.Core.Models
+﻿namespace RealWorldStocks.Client.Core.Models
 {
     public class StockSnapshot
     {
