@@ -58,6 +58,7 @@
     <Reference Include="Caliburn.Micro.Extensions">
       <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\SL40-wp\Caliburn.Micro.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Controls" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
@@ -79,6 +80,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PriceChangeArrow.cs" />
+    <Compile Include="Controls\WatermarkedTextBox.cs" />
     <Compile Include="Framework\AppBootstrapper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\CollectionCountVisibilityConverter.cs" />
@@ -90,12 +93,16 @@
     <Compile Include="Framework\DebugLog.cs" />
     <Compile Include="ViewModels\BasicHttpViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeNewsViewModel.cs" />
+    <Compile Include="ViewModels\Home\HomeQuoteViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeWatchListViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StockDetails\StockDetailsViewModel.cs" />
     <Compile Include="ViewModels\StockQuoteViewModel.cs" />
     <Compile Include="Views\Home\HomeNewsView.xaml.cs">
       <DependentUpon>HomeNewsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\HomeQuoteView.xaml.cs">
+      <DependentUpon>HomeQuoteView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -129,7 +136,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Home\HomeNewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Home\HomeQuoteView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,8 +171,16 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\pano.png" />
+    <Content Include="Assets\Images\panol.png" />
     <Content Include="Icon173.png" />
     <Content Include="Icon62.png" />
+    <Content Include="Assets\Icons\appbar.add.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Icons\appbar.refresh.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
@@ -174,6 +197,7 @@
       <Name>RealWorldStocks.Client.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

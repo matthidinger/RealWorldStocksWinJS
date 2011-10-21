@@ -7,6 +7,7 @@ namespace RealWorldStocks.Client.Core.Data.Services
     {
         HttpRequest<StockSnapshot> GetSnapshot(string symbol);
         HttpRequest<IEnumerable<StockSnapshot>> GetWatchListSnapshots();
+        HttpRequest<IEnumerable<News>> GetNewsForWatchList();
     }
 
     public class StocksWebService : HttpService, IStocksWebService
@@ -42,6 +43,20 @@ namespace RealWorldStocks.Client.Core.Data.Services
                                   };
 
             return CreateHttpRequest<IEnumerable<StockSnapshot>>("Stocks/GetSnapshots", queryString);
+        }
+
+        public HttpRequest<IEnumerable<News>> GetNewsForWatchList()
+        {
+            var queryString = new QueryString
+                                  {
+                                      {"symbols", "MSFT"},
+                                      {"symbols", "AAPL"},
+                                      {"symbols", "GOOG"},
+                                      {"symbols", "AMZN"},
+                                      {"symbols", "NFLX"}
+                                  };
+
+            return CreateHttpRequest<IEnumerable<News>>("Stocks/GetNews", queryString);
         }
     }
 }
