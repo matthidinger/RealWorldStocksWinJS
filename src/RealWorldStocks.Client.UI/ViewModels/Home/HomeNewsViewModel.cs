@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using Caliburn.Micro;
+using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
 using RealWorldStocks.Client.Core.Helpers;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.Framework;
+using RealWorldStocks.Client.UI.Helpers;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home
 {
-    public class HomeNewsViewModel : Screen, IRefreshable
+    public class HomeNewsViewModel : Screen, IRefreshable, IAppBarController
     {
         private readonly IStocksWebService _stocksWebService;
 
@@ -63,5 +66,18 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             // TODO: Navigate to news page
         }
 
+
+
+        public IApplicationBar ApplicationBar
+        {
+            get
+            {
+                var appBar = new ApplicationBar();
+                appBar.Buttons.Add(AppBarHelper.RefreshButton);
+                return appBar;
+            }
+        }
+
+        public event EventHandler AppBarChanged = delegate {};
     }
 }

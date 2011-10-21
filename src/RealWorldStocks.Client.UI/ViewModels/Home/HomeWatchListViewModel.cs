@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using Caliburn.Micro;
+using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
 using RealWorldStocks.Client.Core.Helpers;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.Framework;
+using RealWorldStocks.Client.UI.Helpers;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home
 {
-    public class HomeWatchListViewModel : Screen, IRefreshable
+    public class HomeWatchListViewModel : Screen, IRefreshable, IAppBarController
     {
         private readonly IStocksWebService _stocksWebService;
 
@@ -29,28 +32,18 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
         private IEnumerable<IResult> UpdateWatchList()
         {
-            var fake = new List<StockSnapshot>
-                           {
-                               new StockSnapshot {Symbol = "MSFT"},
-                               new StockSnapshot {Symbol = "AAPL"},
-                               new StockSnapshot {Symbol = "AMZN"},
-                               new StockSnapshot {Symbol = "GOOG"},
-                           };
+            var request = _stocksWebService.GetWatchListSnapshots().Execute();
+            yield return request;
 
-            WatchList.RepopulateObservableCollection(fake);
+            // TODO: Handle errors
+            if (!request.Response.HasError)
+            {
+                WatchList.RepopulateObservableCollection(request.Response.Model);
+            }
+            else
+            {
 
-            //var request = _stocksWebService.GetWatchListSnapshots().Execute();
-            //yield return request;
-
-            //// TODO: Handle errors
-            //if(!request.Response.HasError)
-            //{
-            //    WatchList.RepopulateObservableCollection(request.Response.Model);
-            //}
-            //else
-            //{
-                
-            //}
+            }
 
             yield return BusyIndictator.HideResult();
         }
@@ -67,5 +60,18 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 Coroutine.BeginExecute(UpdateWatchList().GetEnumerator());
             });
         }
+
+        public IApplicationBar ApplicationBar
+        {
+            get
+            {
+                var appBar = new ApplicationBar();
+                appBar.Buttons.Add(AppBarHelper.AddButton);
+                appBar.Buttons.Add(AppBarHelper.RefreshButton);
+                return appBar;
+            }
+        }
+
+        public event EventHandler AppBarChanged = delegate { };
     }
 }
