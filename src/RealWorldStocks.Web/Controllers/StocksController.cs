@@ -20,6 +20,7 @@ namespace RealWorldStocks.Web.Controllers
 
         public ActionResult GetSnapshots(string[] symbols)
         {
+            //Thread.Sleep(3000);
             var model = _stocksService.GetSnapshots(symbols);
             return Json(model);
         }

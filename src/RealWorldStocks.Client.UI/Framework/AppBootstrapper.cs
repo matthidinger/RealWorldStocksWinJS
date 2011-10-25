@@ -106,6 +106,15 @@ namespace RealWorldStocks.Client.UI.Framework
             WatchList.Initialize();
         }
 
+        protected override void OnActivate(object sender, ActivatedEventArgs e)
+        {
+            base.OnActivate(sender, e);
+            if (!e.IsApplicationInstancePreserved)
+            {
+                WatchList.Initialize();
+            }
+        }
+
         protected override void OnDeactivate(object sender, DeactivatedEventArgs e)
         {
             WatchList.Current.PersistData();

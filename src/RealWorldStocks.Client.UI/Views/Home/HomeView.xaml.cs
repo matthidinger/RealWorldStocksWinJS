@@ -8,7 +8,6 @@ namespace RealWorldStocks.Client.UI.Views.Home
         public HomeView()
         {
             InitializeComponent();
-            AppBarHelper.BindAppBar(this);
         }
     }
 }

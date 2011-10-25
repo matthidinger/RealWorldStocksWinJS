@@ -1,9 +1,8 @@
 ﻿using System.Device.Location;
-using Caliburn.Micro;
 
 namespace RealWorldStocks.Client.Core.Models
 {
-    public class GlobalData : PropertyChangedBase
+    public class GlobalData : NotifyObject
     {
         private GlobalData()
         {

@@ -1,11 +1,10 @@
 ﻿using System.IO.IsolatedStorage;
 using System.Reflection;
-using Caliburn.Micro;
 using RealWorldStocks.Client.Core.Helpers;
 
 namespace RealWorldStocks.Client.Core.Models
 {
-    public class ApplicationSettings : PropertyChangedBase
+    public class ApplicationSettings : NotifyObject
     {
         private static ApplicationSettings _current;
         public static ApplicationSettings Current

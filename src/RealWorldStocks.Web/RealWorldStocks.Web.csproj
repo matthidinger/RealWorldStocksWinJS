@@ -71,6 +71,9 @@
     <Compile Include="..\RealWorldStocks.Client.Core\Models\News.cs">
       <Link>Models\News.cs</Link>
     </Compile>
+    <Compile Include="..\RealWorldStocks.Client.Core\Models\NotifyObject.cs">
+      <Link>Models\NotifyObject.cs</Link>
+    </Compile>
     <Compile Include="..\RealWorldStocks.Client.Core\Models\StockSnapshot.cs">
       <Link>Models\StockSnapshot.cs</Link>
     </Compile>

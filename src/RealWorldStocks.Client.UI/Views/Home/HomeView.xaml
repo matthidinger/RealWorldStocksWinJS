@@ -7,12 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
-    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
     xmlns:controlsPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls" 
     x:Class="RealWorldStocks.Client.UI.Views.Home.HomeView" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     toolkit:TiltEffect.IsTiltEnabled="true"
     SupportedOrientations="Portrait" Orientation="Portrait" 
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
     shell:SystemTray.IsVisible="True" shell:SystemTray.Opacity="0">
     <phone:PhoneApplicationPage.FontFamily>
         <StaticResource ResourceKey="PhoneFontFamilyNormal"/>

@@ -29,7 +29,7 @@ namespace RealWorldStocks.Client.UI.Controls
 
         private static void PriceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((PriceChangeArrow)d).ChangeVisualState(true);
+            ((PriceChangeArrow) d).ChangeVisualState(true);
         }
 
         public decimal? Price
@@ -43,7 +43,7 @@ namespace RealWorldStocks.Client.UI.Controls
         {
             get
             {
-                if (Price == null || Price > 0)
+                if (Price == null || Price >= 0)
                     return "Positive";
                 
                 return "Negative";
