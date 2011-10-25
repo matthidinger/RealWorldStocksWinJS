@@ -5,7 +5,9 @@ using System.Windows;
 using System.Windows.Controls;
 using Caliburn.Micro;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data.Services;
+using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.Controls;
 using RealWorldStocks.Client.UI.ViewModels;
 using RealWorldStocks.Client.UI.ViewModels.Home;
@@ -96,6 +98,24 @@ namespace RealWorldStocks.Client.UI.Framework
             }
 
             base.OnUnhandledException(sender, e);
+        }
+
+        protected override void OnLaunch(object sender, LaunchingEventArgs e)
+        {
+            base.OnLaunch(sender, e);
+            WatchList.Initialize();
+        }
+
+        protected override void OnDeactivate(object sender, DeactivatedEventArgs e)
+        {
+            WatchList.Current.PersistData();
+            base.OnDeactivate(sender, e);
+        }
+
+        protected override void OnClose(object sender, ClosingEventArgs e)
+        {
+            WatchList.Current.PersistData();
+            base.OnClose(sender, e);
         }
 
         protected override PhoneApplicationFrame CreatePhoneApplicationFrame()

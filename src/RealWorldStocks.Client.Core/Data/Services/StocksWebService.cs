@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Client.Core.Data.Services
@@ -25,7 +26,7 @@ namespace RealWorldStocks.Client.Core.Data.Services
         {
             var queryString = new QueryString
                                   {
-                                      {"Symbol", symbol}
+                                      {"symbol", symbol}
                                   };
 
             return CreateHttpRequest<StockSnapshot>("Stocks/GetSnapshot", queryString);
@@ -33,33 +34,16 @@ namespace RealWorldStocks.Client.Core.Data.Services
 
         public HttpRequest<IEnumerable<StockSnapshot>> GetWatchListSnapshots()
         {
-            var queryString = new QueryString
-                                  {
-                                      {"symbols", "MSFT"},
-                                      {"symbols", "NOK"},
-                                      {"symbols", "AAPL"},
-                                      {"symbols", "GOOG"},
-                                      {"symbols", "AMZN"},
-                                      {"symbols", "NFLX"},
-                                      {"symbols", "IBM"},
-                                      {"symbols", "A"},
-                                      {"symbols", "T"},
-                                      {"symbols", "S"},
-                                  };
+            var queryString = new QueryString();
+            queryString.AddMany("symbols", WatchList.Current.Select(m => m.Symbol));
 
             return CreateHttpRequest<IEnumerable<StockSnapshot>>("Stocks/GetSnapshots", queryString);
         }
 
         public HttpRequest<IEnumerable<News>> GetNewsForWatchList()
         {
-            var queryString = new QueryString
-                                  {
-                                      {"symbols", "MSFT"},
-                                      {"symbols", "AAPL"},
-                                      {"symbols", "GOOG"},
-                                      {"symbols", "AMZN"},
-                                      {"symbols", "NFLX"}
-                                  };
+            var queryString = new QueryString();
+            queryString.AddMany("symbols", WatchList.Current.Select(m => m.Symbol));
 
             return CreateHttpRequest<IEnumerable<News>>("Stocks/GetNews", queryString);
         }

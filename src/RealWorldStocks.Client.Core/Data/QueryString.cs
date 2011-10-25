@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Client.Core.Data
 {
@@ -17,6 +18,14 @@ namespace RealWorldStocks.Client.Core.Data
         public void Add(string key, string value)
         {
             _params.Add(new KeyValuePair<string, string>(key, value));
+        }
+
+        public void AddMany(string key, IEnumerable<string> items)
+        {
+            foreach (var item in items)
+            {
+                Add(key, item);
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
