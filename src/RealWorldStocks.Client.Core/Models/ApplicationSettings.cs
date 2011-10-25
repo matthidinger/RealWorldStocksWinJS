@@ -1,9 +1,6 @@
-﻿using System;
-using System.Device.Location;
-using System.IO.IsolatedStorage;
+﻿using System.IO.IsolatedStorage;
 using System.Reflection;
 using Caliburn.Micro;
-using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Helpers;
 
 namespace RealWorldStocks.Client.Core.Models
@@ -28,53 +25,6 @@ namespace RealWorldStocks.Client.Core.Models
             string name = Assembly.GetExecutingAssembly().FullName;
             var version = new AssemblyName(name).Version;
             ClientVersion = version.ToString();
-        }
-
-        public bool AllowLocation
-        {
-            get
-            {
-                return IsolatedStorageSettings.ApplicationSettings.GetSetting("AllowLocation", false);
-            }
-            set
-            {
-                IsolatedStorageSettings.ApplicationSettings["AllowLocation"] = value;
-                NotifyOfPropertyChange(() => AllowLocation);
-
-                // If the user disables AllowLocation then clear out their current location
-                if (value == false)
-                {
-                    GlobalData.Current.MyLocation = new GeoCoordinate();
-                }
-            }
-        }
-
-        public bool RunUnderLock
-        {
-            get
-            {
-                return IsolatedStorageSettings.ApplicationSettings.GetSetting("RunUnderLock", false);
-            }
-            set
-            {
-                IsolatedStorageSettings.ApplicationSettings["RunUnderLock"] = value;
-                ToggleIdleDetection(value);
-                NotifyOfPropertyChange(() => RunUnderLock);
-            }
-        }
-
-        /// <summary>
-        /// Try to toggle the OS Idle-detection but this can only be set once and may require an app restart
-        /// </summary>
-        private static void ToggleIdleDetection(bool enabled)
-        {
-            try
-            {
-                PhoneApplicationService.Current.ApplicationIdleDetectionMode = enabled ? IdleDetectionMode.Disabled : IdleDetectionMode.Enabled;
-            }
-            catch (InvalidOperationException)
-            {
-            }
         }
 
 

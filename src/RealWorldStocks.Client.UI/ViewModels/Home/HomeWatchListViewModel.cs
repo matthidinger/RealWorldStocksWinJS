@@ -28,6 +28,10 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
         protected override void OnInitialize()
         {
+            if (Core.Models.WatchList.Current.Count == 0)
+            {
+                Core.Models.WatchList.Current.Add(new StockSnapshot {Symbol = "MSFT"});
+            }
             RefreshData();
         }
 
@@ -55,7 +59,8 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             }
             else
             {
-                MessageBox.Show("We had troubles updating your watch list, please try again in a few moments", "Unable to contact server", MessageBoxButton.OK);
+                MessageBox.Show("We had troubles updating your watch list, please try again in a few moments",
+                    "Unable to contact server", MessageBoxButton.OK);
             }
 
             yield return BusyIndictator.HideResult();
