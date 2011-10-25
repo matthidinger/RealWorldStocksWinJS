@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using Caliburn.Micro;
@@ -21,17 +22,15 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
         {
             _stocksWebService = stocksWebService;
             DisplayName = "watch list";
-            WatchList = new BindableCollection<StockSnapshot>();
         }
 
-        public BindableCollection<StockSnapshot> WatchList { get; set; }
+        public BindableCollection<StockSnapshot> WatchListItems
+        {
+            get { return WatchList.Current; }
+        }
 
         protected override void OnInitialize()
         {
-            if (Core.Models.WatchList.Current.Count == 0)
-            {
-                Core.Models.WatchList.Current.Add(new StockSnapshot {Symbol = "MSFT"});
-            }
             RefreshData();
         }
 
@@ -40,7 +39,6 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             BusyIndictator.Show("Loading watch list...");
 
             // TODO: Move this to OnViewReady in CM 1.3
-            // For now sleep for a bit to let the panorama load smoothly
             ThreadPool.QueueUserWorkItem(callback =>
             {
                 Thread.Sleep(1000);
@@ -55,7 +53,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
             if (!request.Response.HasError)
             {
-                WatchList.RepopulateObservableCollection(request.Response.Model);
+                WatchList.Current.UpdateSnapshots(request.Response.Model.ToList());
             }
             else
             {

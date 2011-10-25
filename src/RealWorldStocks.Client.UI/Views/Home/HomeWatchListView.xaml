@@ -3,9 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro" 
-	xmlns:Controls="clr-namespace:RealWorldStocks.Client.UI.Controls" 
+    xmlns:Controls="clr-namespace:RealWorldStocks.Client.UI.Controls" 
 	x:Class="RealWorldStocks.Client.UI.Views.Home.HomeWatchListView"
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
     mc:Ignorable="d"
     d:DesignHeight="480" d:DesignWidth="480">
 	<UserControl.Resources>
@@ -56,6 +56,6 @@
 	</UserControl.Foreground>
     
     <Grid x:Name="LayoutRoot">
-        <ListBox x:Name="WatchList" ItemTemplate="{StaticResource WatchListItemTemplate}"/>
+        <ListBox x:Name="WatchListItems" ItemTemplate="{StaticResource WatchListItemTemplate}"/>
     </Grid>
 </UserControl>

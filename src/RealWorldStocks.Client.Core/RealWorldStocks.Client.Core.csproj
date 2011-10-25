@@ -85,6 +85,7 @@
     <Compile Include="Models\IRefreshable.cs" />
     <Compile Include="Models\JsonSerializedCollection.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NotifyObject.cs" />
     <Compile Include="Models\StockSnapshot.cs" />
     <Compile Include="Models\WatchList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

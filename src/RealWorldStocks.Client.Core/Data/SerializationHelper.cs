@@ -1,12 +1,11 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Json;
-using System.Text;
 
 namespace RealWorldStocks.Client.Core.Data
 {
     public static class SerializationHelper
     {
-        // TODO: Bring JSON.NET back with CM 1.3 to fix a method access exception
+        // TODO: Convert back to JSON.NET when upgraded to CM 1.3 - to fix a method access exception
         //public static T Deserialize<T>(string serialized)
         //{
         //    if (string.IsNullOrEmpty(serialized))
@@ -22,13 +21,15 @@ namespace RealWorldStocks.Client.Core.Data
 
         public static string Serialize<T>(T obj)
         {
-            var ser = new DataContractJsonSerializer(typeof (T));
-            var stream = new MemoryStream(); 
-            var sr = new StreamReader(stream); 
-            ser.WriteObject(stream, obj); 
-            sr.BaseStream.Position = 0; 
-            string s = sr.ReadToEnd();
-            return s;
+            using(var stream = new MemoryStream())
+            using (var sr = new StreamReader(stream))
+            {
+                var ser = new DataContractJsonSerializer(typeof(T));
+                ser.WriteObject(stream, obj);
+                sr.BaseStream.Position = 0;
+                string s = sr.ReadToEnd();
+                return s;
+            }
         }
 
         public static T Deserialize<T>(string json)
@@ -44,6 +45,5 @@ namespace RealWorldStocks.Client.Core.Data
                 return (T) ser.ReadObject(stream);
             }
         }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.IsolatedStorage;
@@ -24,7 +25,7 @@ namespace RealWorldStocks.Client.Core.Models
         }
 
         public static TCollection Current { get; private set; }
-
+        protected abstract IEnumerable<TItem> DefaultItems { get; }
 
         public void LoadFromCache()
         {
@@ -32,7 +33,14 @@ namespace RealWorldStocks.Client.Core.Models
             using (var reader = new StreamReader(appStorage.OpenFile(string.Format(StorageFilename), FileMode.OpenOrCreate, FileAccess.ReadWrite)))
             {
                 var json = reader.ReadToEnd();
-                if (!string.IsNullOrEmpty(json))
+                if (string.IsNullOrEmpty(json))
+                {
+                    foreach (var item in DefaultItems)
+                    {
+                        Add(item);
+                    }
+                }
+                else
                 {
                     try
                     {
