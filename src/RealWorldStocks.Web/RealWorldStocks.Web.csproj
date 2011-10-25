@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -87,6 +89,7 @@
     <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\IStocksService.cs" />
     <Compile Include="Services\FakeNewsService.cs" />
+    <Compile Include="Services\YahooFinanceNewsService.cs" />
     <Compile Include="Services\YahooStocksService.cs" />
   </ItemGroup>
   <ItemGroup>
