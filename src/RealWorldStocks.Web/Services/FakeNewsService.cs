@@ -7,7 +7,7 @@ namespace RealWorldStocks.Web.Services
 {
     public class FakeNewsService : INewsService
     {
-        public List<News> GetNews(string[] symbols)
+        public IEnumerable<News> GetNews(string[] symbols)
         {
             var model = symbols.
                 Select((symbol, index) =>
@@ -17,10 +17,9 @@ namespace RealWorldStocks.Web.Services
                                Summary = string.Join(" ", Enumerable.Repeat("Lorem ipsum", index + 1).ToArray()),
                                ArticleDate = DateTime.Now.AddDays(1 - index),
                                Url = "http://www.matthidinger.com"
-                           })
-                .ToList();
+                           });
 
             return model;
-        }
+        }   
     }
 }
