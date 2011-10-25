@@ -81,6 +81,10 @@
     <Compile Include="Helpers\AllowJsonGetAttribute.cs" />
     <Compile Include="Helpers\NoCacheAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\INewsService.cs" />
+    <Compile Include="Services\IStocksService.cs" />
+    <Compile Include="Services\FakeNewsService.cs" />
+    <Compile Include="Services\YahooStocksService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
