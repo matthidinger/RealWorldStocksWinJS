@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Windows;
 using Caliburn.Micro;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;
@@ -30,24 +31,6 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             RefreshData();
         }
 
-        private IEnumerable<IResult> UpdateWatchList()
-        {
-            var request = _stocksWebService.GetWatchListSnapshots().Execute();
-            yield return request;
-
-            // TODO: Handle errors
-            if (!request.Response.HasError)
-            {
-                WatchList.RepopulateObservableCollection(request.Response.Model);
-            }
-            else
-            {
-
-            }
-
-            yield return BusyIndictator.HideResult();
-        }
-
         public void RefreshData()
         {
             BusyIndictator.Show("Loading watch list...");
@@ -60,6 +43,25 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 Coroutine.BeginExecute(UpdateWatchList().GetEnumerator());
             });
         }
+
+        private IEnumerable<IResult> UpdateWatchList()
+        {
+            var request = _stocksWebService.GetWatchListSnapshots().Execute();
+            yield return request;
+
+            if (!request.Response.HasError)
+            {
+                WatchList.RepopulateObservableCollection(request.Response.Model);
+            }
+            else
+            {
+                MessageBox.Show("We had troubles updating your watch list, please try again in a few moments", "Unable to contact server", MessageBoxButton.OK);
+            }
+
+            yield return BusyIndictator.HideResult();
+        }
+
+
 
         // TODO: Come up with a system to disable the Refresh button when already refreshing?
 

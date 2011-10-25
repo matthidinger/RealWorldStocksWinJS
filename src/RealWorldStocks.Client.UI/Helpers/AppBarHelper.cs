@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Windows.Interactivity;
 using Caliburn.Micro;
 using Microsoft.Phone.Controls;
@@ -8,7 +9,7 @@ using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.Helpers
 {
-    // TODO: Ask Rob to make this public in CM 1.3
+    // TODO: Make CM Issue to get this trigger change in the master
     public class AppBarButtonTrigger : TriggerBase<PhoneApplicationPage>
     {
         private readonly IApplicationBarMenuItem _button;
@@ -39,12 +40,14 @@ namespace RealWorldStocks.Client.UI.Helpers
         public static void BindAppBar(PhoneApplicationPage page)
         {
             var appBarController = page.DataContext as IAppBarController;
+            var pageAppBar = page.ApplicationBar;
+
             if (appBarController != null)
             {
                 appBarController.
                     AppBarChanged += (s2, e2) =>
                                          {
-                                             var pageAppBar = page.ApplicationBar;
+                                             // TODO: See if I can cache the app bars for each view model, perf is currently suffering a little when flipping through panorama
                                              var controllerAppBar = appBarController.ApplicationBar;
                                              var triggers = Interaction.GetTriggers(page);
 
@@ -77,14 +80,16 @@ namespace RealWorldStocks.Client.UI.Helpers
                                              pageAppBar.Mode = controllerAppBar.Mode;
                                              pageAppBar.IsMenuEnabled = controllerAppBar.IsMenuEnabled;
 
-                                             pageAppBar.StateChanged += (s3, e3)
-                                                                        =>
-                                                                            {
-                                                                                pageAppBar.Opacity = e3.IsMenuVisible
-                                                                                                         ? 0.99
-                                                                                                         : 0;
-                                                                            };
+                                            
                                          };
+
+                page.ApplicationBar.StateChanged += (s3, e3)
+                                                    =>
+                                                        {
+                                                            pageAppBar.Opacity = e3.IsMenuVisible
+                                                                                     ? 0.99
+                                                                                     : 0;
+                                                        };
             }
         }
 

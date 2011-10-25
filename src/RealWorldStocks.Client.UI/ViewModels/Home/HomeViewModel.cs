@@ -21,6 +21,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             Items.Add(quote);
         }
 
+
         protected override void OnViewAttached(object view, object context)
         {
             base.OnViewAttached(view, context);
@@ -58,25 +59,25 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 .Navigate();
         }
 
-        public void RefreshData()
-        {
-            var refreshableChild = ActiveItem as IRefreshable;
-            if (refreshableChild != null)
-                refreshableChild.RefreshData();
-        }
+public void RefreshData()
+{
+    var refreshableChild = ActiveItem as IRefreshable;
+    if (refreshableChild != null)
+        refreshableChild.RefreshData();
+}
 
         public IApplicationBar ApplicationBar
         {
             get
             {
                 var childAppBarController = ActiveItem as IAppBarController;
-                if(childAppBarController != null)
+                if (childAppBarController != null)
                 {
                     childAppBarController.AppBarChanged += AppBarChanged;
                     return childAppBarController.ApplicationBar;
                 }
 
-                return new ApplicationBar { IsVisible = false};
+                return new ApplicationBar { IsVisible = false };
             }
         }
 
