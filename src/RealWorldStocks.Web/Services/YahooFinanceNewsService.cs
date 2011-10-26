@@ -10,7 +10,7 @@ namespace RealWorldStocks.Web.Services
 {
     public class YahooFinanceNewsService : INewsService
     {
-        public IEnumerable<Client.Core.Models.News> GetNews(string[] symbols)
+        public IEnumerable<News> GetNews(string[] symbols)
         {
             var url = string.Format("http://feeds.finance.yahoo.com/rss/2.0/headline?s={0}&region=US&lang=en-US", String.Join(",", symbols));
             var reader = XmlReader.Create(url, new XmlReaderSettings() { DtdProcessing = DtdProcessing.Parse });
@@ -24,7 +24,6 @@ namespace RealWorldStocks.Web.Services
                         new News
                         {
                             Title = item.Title.Text,
-                            Summary = item.Summary.Text,
                             ArticleDate = item.PublishDate.DateTime,
                             Url = item.Links[0].Uri.ToString()
                         });

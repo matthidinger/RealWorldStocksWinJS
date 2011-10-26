@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 using RealWorldStocks.Web.Helpers;
 using RealWorldStocks.Web.Services;
@@ -27,8 +28,7 @@ namespace RealWorldStocks.Web.Controllers
 
         public ActionResult GetNews(string[] symbols)
         {
-            // Sleep here to highlight the Loading indicator in the app
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             var model = _newsService.GetNews(symbols);
             return Json(model);
         }
