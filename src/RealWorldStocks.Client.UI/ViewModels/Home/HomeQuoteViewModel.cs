@@ -20,6 +20,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             _stocksWebService = stocksWebService;
         }
 
+
         private string _symbol;
         public string Symbol
         {
