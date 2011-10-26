@@ -14,7 +14,6 @@ namespace RealWorldStocks.Web.Services
                        new News
                            {
                                Title = "News " + index,
-                               Summary = string.Join(" ", Enumerable.Repeat("Lorem ipsum", index + 1).ToArray()),
                                ArticleDate = DateTime.Now.AddDays(1 - index),
                                Url = "http://www.matthidinger.com"
                            });

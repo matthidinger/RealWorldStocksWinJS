@@ -52,9 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro">
-      <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\SL40-wp\Caliburn.Micro.dll</HintPath>
-    </Reference>
+    <Reference Include="Caliburn.Micro, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Caliburn.Micro.Extensions">
       <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\SL40-wp\Caliburn.Micro.Extensions.dll</HintPath>
     </Reference>
@@ -70,9 +68,7 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Interactivity, Version=3.7.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\SL40-wp\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>

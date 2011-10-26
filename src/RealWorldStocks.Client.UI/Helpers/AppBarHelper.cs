@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading;
 using System.Windows.Interactivity;
 using Caliburn.Micro;
 using Microsoft.Phone.Controls;
@@ -12,22 +11,22 @@ namespace RealWorldStocks.Client.UI.Helpers
     // TODO: Make CM Issue to get this trigger change in the master
     public class AppBarButtonTrigger : TriggerBase<PhoneApplicationPage>
     {
-        private readonly IApplicationBarMenuItem _button;
+        //private readonly IApplicationBarMenuItem _button;
 
         public AppBarButtonTrigger(IApplicationBarMenuItem button)
         {
-            _button = button;
+            //_button = button;
+            button.Click += ButtonClicked;
         }
 
-        protected override void OnAttached()
-        {
-            _button.Click += ButtonClicked;
-        }
+        //protected override void OnAttached()
+        //{
+        //}
 
-        protected override void OnDetaching()
-        {
-            _button.Click -= ButtonClicked;
-        }
+        //protected override void OnDetaching()
+        //{
+        //    _button.Click -= ButtonClicked;
+        //}
 
         void ButtonClicked(object sender, EventArgs e)
         {
@@ -47,12 +46,19 @@ namespace RealWorldStocks.Client.UI.Helpers
                 appBarController.
                     AppBarChanged += (s2, e2) =>
                                          {
+                                             var triggers = Interaction.GetTriggers(page);
+                                            
+                                             // Clear out the old buttons and triggers.
+                                             page.ApplicationBar.Buttons.Clear();
+                                            
+                                             // TODO: This could become a perf problem, should really get to the root of it 
+                                             // For some reason I could only get this to work by Disabling the Actions, if I tried to remove them, or remove the actions, I would get an NRE
+                                             triggers.OfType<AppBarButtonTrigger>().SelectMany(m => m.Actions).Apply(a => a.IsEnabled = false);
+
+
                                              // TODO: See if I can cache the app bars for each view model, perf is currently suffering a little when flipping through panorama
                                              var controllerAppBar = appBarController.ApplicationBar;
-                                             var triggers = Interaction.GetTriggers(page);
 
-                                             pageAppBar.Buttons.Clear();
-                                             triggers.OfType<AppBarButtonTrigger>().ToList().ForEach(trigger => triggers.Remove(trigger));
 
                                              foreach (var button in controllerAppBar.Buttons)
                                              {
@@ -62,12 +68,12 @@ namespace RealWorldStocks.Client.UI.Helpers
                                                  {
                                                      var parsedTrigger = Parser.Parse(page, caliburnButton.Message).First();
                                                      var trigger = new AppBarButtonTrigger(caliburnButton);
+                                                  
                                                      var actionMessages = parsedTrigger.Actions.OfType<ActionMessage>().ToList();
-                                                     actionMessages.Apply(x =>
+                                                     actionMessages.Apply(message =>
                                                      {
-                                                         //x.buttonSource = caliburnButton;
-                                                         parsedTrigger.Actions.Remove(x);
-                                                         trigger.Actions.Add(x);
+                                                         parsedTrigger.Actions.Remove(message);
+                                                         trigger.Actions.Add(message);
                                                      });
 
                                                      triggers.Add(trigger);
@@ -80,7 +86,7 @@ namespace RealWorldStocks.Client.UI.Helpers
                                              pageAppBar.Mode = controllerAppBar.Mode;
                                              pageAppBar.IsMenuEnabled = controllerAppBar.IsMenuEnabled;
 
-                                            
+
                                          };
 
                 page.ApplicationBar.StateChanged += (s3, e3)

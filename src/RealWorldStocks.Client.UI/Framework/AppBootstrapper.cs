@@ -21,6 +21,8 @@ namespace RealWorldStocks.Client.UI.Framework
 
         protected override void Configure()
         {
+            //ActionMessage.ApplyAvailabilityEffect = context => true;
+
             LogManager.GetLog = type => new DebugLog();
 
             _container = new PhoneContainer(RootFrame);

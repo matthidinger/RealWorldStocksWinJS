@@ -31,15 +31,16 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             RefreshData();
         }
 
-        private IEnumerable<IResult> UpdateWatchList()
+        private IEnumerable<IResult> UpdateNews()
         {
             var request = _stocksWebService.GetNewsForWatchList().Execute();
             yield return request;
 
+
             // TODO: Handle errors, need to hide busy indicator on failure. Research best way to handle in CM
             if (!request.Response.HasError)
             {
-                News.RepopulateObservableCollection(request.Response.Model);
+                News.Repopulate(request.Response.Model);
             }
             else
             {
@@ -57,13 +58,13 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             ThreadPool.QueueUserWorkItem(callback =>
             {
                 Thread.Sleep(1000);
-                Coroutine.BeginExecute(UpdateWatchList().GetEnumerator());
+                Coroutine.BeginExecute(UpdateNews().GetEnumerator());
             });
         }
 
         public void LoadNews(News news)
         {
-            // TODO: Navigate to news page
+             //TODO: Navigate to news page
         }
 
 
@@ -78,6 +79,6 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             }
         }
 
-        public event EventHandler AppBarChanged = delegate {};
+        public event EventHandler AppBarChanged = delegate { };
     }
 }

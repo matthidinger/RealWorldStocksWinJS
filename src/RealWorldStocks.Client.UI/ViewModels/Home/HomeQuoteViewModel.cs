@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using Caliburn.Micro;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Data;

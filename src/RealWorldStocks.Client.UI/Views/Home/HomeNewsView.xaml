@@ -10,7 +10,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
     <UserControl.Resources>
-        <DataTemplate x:Key="WatchListItemTemplate">
+        <DataTemplate x:Key="NewsItemTemplate">
             <HyperlinkButton Style="{StaticResource StretchingContentControl}" Width="430" d:DesignHeight="70" cal:Message.Attach="LoadNews($dataContext)" Margin="0,12">
                 <Grid>
                 	<Grid.RowDefinitions>
@@ -22,13 +22,12 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBlock TextWrapping="Wrap" Text="{Binding Title}" Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="0" />
-                    <TextBlock TextWrapping="Wrap" Text="{Binding Summary}" Style="{StaticResource PhoneTextSmallStyle}" Grid.Row="1" />
                 	<TextBlock TextWrapping="Wrap" Text="{Binding ArticleDate, Converter={StaticResource RelativeDateTimeConverter}}" Grid.Row="2" Style="{StaticResource PhoneTextAccentStyle}"/>
                 </Grid>
             </HyperlinkButton>
         </DataTemplate>
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot">
-        <ListBox x:Name="News" ItemTemplate="{StaticResource WatchListItemTemplate}"/>
+        <ListBox x:Name="News" ItemTemplate="{StaticResource NewsItemTemplate}" />
     </Grid>
 </UserControl>
