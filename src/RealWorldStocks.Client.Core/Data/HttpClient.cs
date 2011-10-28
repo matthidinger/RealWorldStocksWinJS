@@ -1,14 +1,14 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
-using Caliburn.Micro;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace RealWorldStocks.Client.Core.Data
 {
     public static class HttpClient
     {
-        private static readonly ILog Log = LogManager.GetLog(typeof(HttpClient));
-
         public static void BeginGetRequest<T>(HttpRequest<T> request, Action<HttpResponse<T>> callback)
         {
             BeginGetRequest(request.Url, callback);
@@ -17,7 +17,7 @@ namespace RealWorldStocks.Client.Core.Data
         public static void BeginGetRequest<T>(string url, Action<HttpResponse<T>> callback)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
-            Log.Info("HTTP Request: {0}", request.RequestUri);
+            Debug.WriteLine("HTTP Request: {0}", request.RequestUri);
             try
             {
                 request.BeginGetResponse(iar =>
@@ -36,10 +36,10 @@ namespace RealWorldStocks.Client.Core.Data
                             using (var reader = new StreamReader(response.GetResponseStream()))
                             {
                                 string json = reader.ReadToEnd().Replace("&amp;", "&");
-                                Log.Info("HTTP Response: {0}\r\n", json);
+                                Debug.WriteLine("HTTP Response: {0}\r\n", json);
                                 var model = SerializationHelper.Deserialize<T>(json);
 
-                                Execute.OnUIThread(() => callback(new HttpResponse<T>(model)));
+                                Deployment.Current.Dispatcher.BeginInvoke(() => callback(new HttpResponse<T>(model)));
                             }
                         }
                         else
@@ -50,8 +50,8 @@ namespace RealWorldStocks.Client.Core.Data
                     catch (WebException ex)
                     {
                         var httpException = new HttpException(ex);
-                        Log.Error(ex);
-                        Execute.OnUIThread(() => callback(new HttpResponse<T>(httpException)));
+                        Debug.WriteLine(ex);
+                        Deployment.Current.Dispatcher.BeginInvoke(() => callback(new HttpResponse<T>(httpException)));
                     }
                     finally
                     {
@@ -61,8 +61,8 @@ namespace RealWorldStocks.Client.Core.Data
             }
             catch(Exception ex)
             {
-                Log.Error(ex);
-                Execute.OnUIThread(() => callback(new HttpResponse<T>(new HttpException())));
+                Debug.WriteLine(ex);
+                Deployment.Current.Dispatcher.BeginInvoke(() => callback(new HttpResponse<T>(new HttpException())));
             }
         }
     }

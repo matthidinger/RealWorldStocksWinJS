@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Caliburn.Micro;
-using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
 using RealWorldStocks.Client.Core.Models;
+using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.ViewModels
 {

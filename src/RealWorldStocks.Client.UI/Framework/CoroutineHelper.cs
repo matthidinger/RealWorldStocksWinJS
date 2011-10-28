@@ -1,4 +1,6 @@
-namespace RealWorldStocks.Client.Core.Data
+using RealWorldStocks.Client.Core.Data;
+
+namespace RealWorldStocks.Client.UI.Framework
 {
     public static class CoroutineHelper
     {

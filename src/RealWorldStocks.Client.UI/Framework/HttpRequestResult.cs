@@ -1,7 +1,8 @@
 using System;
 using Caliburn.Micro;
+using RealWorldStocks.Client.Core.Data;
 
-namespace RealWorldStocks.Client.Core.Data
+namespace RealWorldStocks.Client.UI.Framework
 {
     /// <summary>
     /// Caliburn.Micro IResult allowing HttpClient requests to participate in coroutines

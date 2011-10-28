@@ -86,7 +86,9 @@
     <Compile Include="Converters\StringConverters.cs" />
     <Compile Include="Converters\StringVisibilityConverter.cs" />
     <Compile Include="Framework\BusyIndicator.cs" />
+    <Compile Include="Framework\CoroutineHelper.cs" />
     <Compile Include="Framework\DebugLog.cs" />
+    <Compile Include="Framework\HttpRequestResult.cs" />
     <Compile Include="Helpers\AppBarHelper.cs" />
     <Compile Include="ViewModels\BasicHttpViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeNewsViewModel.cs" />
