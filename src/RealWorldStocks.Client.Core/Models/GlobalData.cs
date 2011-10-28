@@ -1,7 +1,19 @@
-﻿using System.Device.Location;
+﻿using System.Collections.Generic;
+using System.Device.Location;
 
 namespace RealWorldStocks.Client.Core.Models
 {
+    public class SnapshotCache : Dictionary<string, StockSnapshot>
+    {
+        public StockSnapshot GetFromCache(string key)
+        {
+            if (ContainsKey(key))
+                return this[key];
+
+            return null;
+        }
+    }
+
     public class GlobalData : NotifyObject
     {
         private GlobalData()
@@ -39,6 +51,18 @@ namespace RealWorldStocks.Client.Core.Models
 
                 _myLocation = value;
                 NotifyOfPropertyChange(() => MyLocation);
+            }
+        }
+
+        private SnapshotCache _cachedStops;
+        public SnapshotCache Snapshots
+        {
+            get
+            {
+                if (_cachedStops == null)
+                    _cachedStops = new SnapshotCache();
+
+                return _cachedStops;
             }
         }
     }

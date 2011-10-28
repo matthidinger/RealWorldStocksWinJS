@@ -29,6 +29,15 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             get { return WatchList.Current; }
         }
 
+        // TODO: Need better way of managing the BusyIndicator to handle change pages and coming back with an outstanding HTTP request
+
+        protected override void OnDeactivate(bool close)
+        {
+            base.OnDeactivate(close);
+            BusyIndictator.Hide();
+        }
+
+
         protected override void OnInitialize()
         {
             RefreshData();
