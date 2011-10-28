@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Windows;
@@ -23,7 +24,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
             DisplayName = "watch list";
         }
 
-        public BindableCollection<StockSnapshot> WatchListItems
+        public ObservableCollection<StockSnapshot> WatchListItems
         {
             get { return WatchList.Current; }
         }

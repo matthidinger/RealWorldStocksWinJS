@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Windows;
-using Caliburn.Micro;
 using RealWorldStocks.Client.Core.Data;
 
 namespace RealWorldStocks.Client.Core.Models
 {
-    public abstract class JsonSerializedCollection<TCollection, TItem> : BindableCollection<TItem> 
+    public abstract class JsonSerializedCollection<TCollection, TItem> : ObservableCollection<TItem> 
         where TCollection : JsonSerializedCollection<TCollection, TItem>, new() 
         where TItem : class
     {
@@ -44,7 +44,7 @@ namespace RealWorldStocks.Client.Core.Models
                 {
                     try
                     {
-                        var cached = SerializationHelper.Deserialize<BindableCollection<TItem>>(json);
+                        var cached = SerializationHelper.Deserialize<ObservableCollection<TItem>>(json);
                         if (cached == null || cached.Count == 0)
                             throw new Exception();
 
