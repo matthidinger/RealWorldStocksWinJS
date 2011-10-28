@@ -36,6 +36,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
         public void LoadSymbol(StockSnapshot snapshot)
         {
+            GlobalData.Current.Snapshots[snapshot.Symbol] = snapshot;
             _navigation.UriFor<StockDetailsViewModel>()
                 .WithParam(m => m.Symbol, snapshot.Symbol)
                 .Navigate();

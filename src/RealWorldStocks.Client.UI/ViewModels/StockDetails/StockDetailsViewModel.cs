@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 {
@@ -22,6 +23,9 @@ namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
             }
         }
 
-        public string Company { get; set; }
+        public StockSnapshot Snapshot
+        {
+            get { return GlobalData.Current.Snapshots[Symbol]; }
+        }
     }
 }

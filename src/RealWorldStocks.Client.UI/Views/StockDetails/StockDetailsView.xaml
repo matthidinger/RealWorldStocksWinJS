@@ -17,6 +17,7 @@
     shell:SystemTray.IsVisible="True">
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <TextBlock Text="{Binding Snapshot.LastPrice}"></TextBlock>
         <controls:Pivot x:Name="Items" Title="{Binding Symbol}">
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>

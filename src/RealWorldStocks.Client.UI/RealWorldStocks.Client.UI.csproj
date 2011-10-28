@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="Controls\PriceChangeArrow.cs" />
     <Compile Include="Controls\WatermarkedTextBox.cs" />
+    <Compile Include="Converters\PriceChangeColorConverter.cs" />
     <Compile Include="Framework\AppBootstrapper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\CollectionCountVisibilityConverter.cs" />
