@@ -12,7 +12,17 @@ namespace RealWorldStocks.Client.Core.Data
                          {
                              "We had a problem connecting to the web service, please try again in a few moments."
                          };
+
         }
+
+        public HttpException(string message) : base(message)
+        {
+        }
+
+        public HttpException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
 
         public HttpException(WebException ex)
             : this()
