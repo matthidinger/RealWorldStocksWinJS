@@ -4,14 +4,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Controls="clr-namespace:RealWorldStocks.Client.UI.Controls" mc:Ignorable="d"
-    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
     <UserControl.Resources>
         <DataTemplate x:Key="NewsItemTemplate">
-            <HyperlinkButton Style="{StaticResource StretchingContentControl}" Width="430" d:DesignHeight="70" cal:Message.Attach="LoadNews($dataContext)" Margin="0,12">
+            <HyperlinkButton Style="{StaticResource StretchingContentControl}" Width="430" d:DesignHeight="70" Margin="0,12">
+                <i:Interaction.Behaviors>
+                    <Controls:LaunchBrowserBehavior Url="{Binding Path=Url}" />
+                </i:Interaction.Behaviors>
                 <Grid>
                 	<Grid.RowDefinitions>
                         <RowDefinition />

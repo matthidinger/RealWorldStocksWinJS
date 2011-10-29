@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Json;
 
-namespace RealWorldStocks.Client.Core.Data
+namespace RealWorldStocks.Client.Core
 {
     public static class SerializationHelper
     {

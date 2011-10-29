@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using Caliburn.Micro;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using RealWorldStocks.Client.Core.Data.Services;
+using RealWorldStocks.Client.Core.Web.Services;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.Controls;
 using RealWorldStocks.Client.UI.ViewModels;

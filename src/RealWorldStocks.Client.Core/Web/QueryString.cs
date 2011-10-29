@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RealWorldStocks.Client.Core.Models;
 
-namespace RealWorldStocks.Client.Core.Data
+namespace RealWorldStocks.Client.Core.Web
 {
     public class QueryString : IEnumerable<KeyValuePair<string, string>>
     {

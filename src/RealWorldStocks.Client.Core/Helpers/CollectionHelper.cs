@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace RealWorldStocks.Client.Core.Helpers
+namespace RealWorldStocks.Client.Core
 {
     public static class CollectionHelper
     {

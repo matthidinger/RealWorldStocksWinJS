@@ -4,7 +4,6 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.UI.Framework;
-using RealWorldStocks.Client.UI.Helpers;
 using RealWorldStocks.Client.UI.ViewModels.StockDetails;
 
 namespace RealWorldStocks.Client.UI.ViewModels.Home

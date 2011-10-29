@@ -60,14 +60,14 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\HttpClient.cs" />
-    <Compile Include="Data\HttpException.cs" />
-    <Compile Include="Data\HttpRequest.cs" />
-    <Compile Include="Data\HttpResponse.cs" />
-    <Compile Include="Data\HttpService.cs" />
-    <Compile Include="Data\QueryString.cs" />
-    <Compile Include="Data\SerializationHelper.cs" />
-    <Compile Include="Data\Services\StocksWebService.cs" />
+    <Compile Include="Web\HttpClient.cs" />
+    <Compile Include="Web\HttpException.cs" />
+    <Compile Include="Web\HttpRequest.cs" />
+    <Compile Include="Web\HttpResponse.cs" />
+    <Compile Include="Web\HttpService.cs" />
+    <Compile Include="Web\QueryString.cs" />
+    <Compile Include="Helpers\SerializationHelper.cs" />
+    <Compile Include="Web\Services\StocksWebService.cs" />
     <Compile Include="DynamicLocalhost\DynamicLocalhost.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Helpers\EnumExtensions.cs" />

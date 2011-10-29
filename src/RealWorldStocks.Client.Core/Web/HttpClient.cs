@@ -1,21 +1,20 @@
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Runtime.Serialization;
 using System.Windows;
 using SharpGIS;
 
-namespace RealWorldStocks.Client.Core.Data
+namespace RealWorldStocks.Client.Core.Web
 {
     public static class HttpClient
     {
-        public static void BeginGetRequest<T>(HttpRequest<T> request, Action<HttpResponse<T>> callback)
+        public static void BeginRequest<T>(HttpRequest<T> request, Action<HttpResponse<T>> callback)
         {
-            BeginGetRequest(request.Url, callback);
+            BeginRequest(request.Url, callback);
         }
 
-        public static void BeginGetRequest<T>(string url, Action<HttpResponse<T>> callback)
+        public static void BeginRequest<T>(string url, Action<HttpResponse<T>> callback)
         {
             var client = new GZipWebClient();
             Debug.WriteLine("HTTP Request: {0}", url);

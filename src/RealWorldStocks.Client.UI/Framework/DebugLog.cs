@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Caliburn.Micro;
-using RealWorldStocks.Client.Core.Helpers;
+using RealWorldStocks.Client.Core;
 
 namespace RealWorldStocks.Client.UI.Framework
 {

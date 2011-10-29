@@ -1,6 +1,5 @@
 ﻿using System.IO.IsolatedStorage;
 using System.Reflection;
-using RealWorldStocks.Client.Core.Helpers;
 
 namespace RealWorldStocks.Client.Core.Models
 {

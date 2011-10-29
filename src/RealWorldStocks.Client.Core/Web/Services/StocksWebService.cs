@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RealWorldStocks.Client.Core.Models;
 
-namespace RealWorldStocks.Client.Core.Data.Services
+namespace RealWorldStocks.Client.Core.Web.Services
 {
     public interface IStocksWebService
     {
