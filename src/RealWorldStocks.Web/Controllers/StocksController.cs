@@ -18,10 +18,10 @@ namespace RealWorldStocks.Web.Controllers
             _stocksService = new YahooStocksService();
             _newsService = new YahooFinanceNewsService();
         }
-
+        
         public ActionResult GetSnapshots(string[] symbols)
         {
-            //Thread.Sleep(3000);
+            //Thread.Sleep(20000);
             var model = _stocksService.GetSnapshots(symbols);
             return Json(model);
         }

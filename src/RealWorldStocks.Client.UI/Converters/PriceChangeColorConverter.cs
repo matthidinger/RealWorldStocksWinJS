@@ -9,18 +9,7 @@ namespace RealWorldStocks.Client.UI.Converters
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            decimal? priceChange;
-
-            var snapshot = value as StockSnapshot;
-            if(snapshot != null)
-            {
-                priceChange = snapshot.DaysChange;
-            }
-            else
-            {
-                priceChange = value as decimal?;
-            }
-
+            var priceChange = value as decimal?;
 
             if (priceChange != null && priceChange < 0)
             {
