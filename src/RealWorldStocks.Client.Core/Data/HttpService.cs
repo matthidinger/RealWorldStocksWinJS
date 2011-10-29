@@ -18,7 +18,7 @@ namespace RealWorldStocks.Client.Core.Data
             queryString = queryString ?? new QueryString();
             queryString.Add("isTrial", ApplicationSettings.Current.IsTrial.ToString());
             queryString.Add("clientVersion", ApplicationSettings.Current.ClientVersion);
-
+            queryString.Add("gmtOffset", DateTimeOffset.Now.Offset.Hours.ToString());
 
             // This app doesn't use the Location service but this shows how it's possible
             // to automatically append myLat and myLong to every outgoing request.

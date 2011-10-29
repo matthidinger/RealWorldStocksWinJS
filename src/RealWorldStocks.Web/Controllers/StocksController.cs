@@ -26,10 +26,10 @@ namespace RealWorldStocks.Web.Controllers
             return Json(model);
         }
 
-        public ActionResult GetNews(string[] symbols)
+        public ActionResult GetNews(string[] symbols, int gmtOffset)
         {
             //Thread.Sleep(2000);
-            var model = _newsService.GetNews(symbols);
+            var model = _newsService.GetNews(symbols, gmtOffset);
             return Json(model);
         }
 
