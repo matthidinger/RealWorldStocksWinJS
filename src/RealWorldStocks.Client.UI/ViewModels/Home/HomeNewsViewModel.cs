@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Caliburn.Micro;
 using Microsoft.Phone.Shell;
-using RealWorldStocks.Client.Core.Data;
 using RealWorldStocks.Client.Core.Data.Services;
 using RealWorldStocks.Client.Core.Helpers;
 using RealWorldStocks.Client.Core.Models;

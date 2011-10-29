@@ -8,6 +8,7 @@ namespace RealWorldStocks.Web.Controllers
 {
     [AllowJsonGet]
     [NoCache]
+    [Compress]
     public class StocksController : Controller
     {
         private readonly IStocksService _stocksService;
