@@ -5,6 +5,6 @@ namespace RealWorldStocks.Web.Services
 {
     public interface INewsService
     {
-        IEnumerable<News> GetNews(string[] symbols);
+        IEnumerable<News> GetNews(string[] symbols, int gmtOffset);
     }
 }
