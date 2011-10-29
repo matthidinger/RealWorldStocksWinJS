@@ -29,16 +29,16 @@
 							<ColumnDefinition Width="0.595*"/>
 							<ColumnDefinition Width="0.405*"/>
 						</Grid.ColumnDefinitions>
-						<TextBlock Text="{Binding LastPrice}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" Margin="0" Foreground="{Binding Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right" FontSize="26.667" />
-						<Controls:PriceChangeArrow Price="{Binding DaysChange}"  Grid.Column="1" Width="30" Height="30" Foreground="{Binding Converter={StaticResource PriceChangeColorConverter}}" VerticalAlignment="Center" Margin="0,2,0,0"/>
+						<TextBlock Text="{Binding LastPrice}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" Margin="0" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right" FontSize="26.667" />
+						<Controls:PriceChangeArrow Price="{Binding DaysChange}"  Grid.Column="1" Width="30" Height="30" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" VerticalAlignment="Center" Margin="0,2,0,0"/>
 					</Grid>
 					<Grid Grid.Column="1">
 						<Grid.RowDefinitions>
 							<RowDefinition Height="0.5*"/>
 							<RowDefinition Height="0.5*" />
 						</Grid.RowDefinitions>
-						<TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
-						<TextBlock Text="{Binding DaysChangePercentFormatted}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Top"  Foreground="{Binding Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"/>
+						<TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
+						<TextBlock Text="{Binding DaysChangePercentFormatted}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Top"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"/>
 					</Grid>
 				</Grid>
 			</HyperlinkButton>
