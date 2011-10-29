@@ -1,6 +1,6 @@
 using System;
 using Caliburn.Micro;
-using RealWorldStocks.Client.Core.Data;
+using RealWorldStocks.Client.Core.Web;
 
 namespace RealWorldStocks.Client.UI.Framework
 {
@@ -21,7 +21,7 @@ namespace RealWorldStocks.Client.UI.Framework
 
         public void Execute(ActionExecutionContext context)
         {
-            HttpClient.BeginGetRequest(_request,
+            HttpClient.BeginRequest(_request,
                 response =>
                 {
                     Response = response;

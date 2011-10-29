@@ -7,7 +7,7 @@ namespace RealWorldStocks.Web.Services
 {
     public class FakeNewsService : INewsService
     {
-        public IEnumerable<News> GetNews(string[] symbols, int gmtOffset)
+        public IEnumerable<News> GetNews(string[] symbols, int utcOffset)
         {
             var model = symbols.
                 Select((symbol, index) =>

@@ -6,7 +6,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Client.UI.Framework;
 
-namespace RealWorldStocks.Client.UI.Helpers
+namespace RealWorldStocks.Client.UI
 {
     // TODO: Make CM Issue to get this trigger change in the master
     public class AppBarButtonTrigger : TriggerBase<PhoneApplicationPage>

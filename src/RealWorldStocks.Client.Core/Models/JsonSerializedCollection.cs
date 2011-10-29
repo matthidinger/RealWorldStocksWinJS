@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Windows;
-using RealWorldStocks.Client.Core.Data;
+using RealWorldStocks.Client.Core.Web;
 
 namespace RealWorldStocks.Client.Core.Models
 {

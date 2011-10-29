@@ -1,4 +1,4 @@
-﻿namespace RealWorldStocks.Client.Core.Data
+﻿namespace RealWorldStocks.Client.Core.Web
 {
     public class HttpResponse<T>
     {

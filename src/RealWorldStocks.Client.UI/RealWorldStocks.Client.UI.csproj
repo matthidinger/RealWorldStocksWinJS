@@ -52,10 +52,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Caliburn.Micro.Extensions">
-      <HintPath>..\packages\Caliburn.Micro.1.2.0\lib\SL40-wp\Caliburn.Micro.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Controls" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
@@ -68,7 +64,7 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Interactivity, Version=3.7.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
@@ -76,6 +72,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LaunchBrowserBehavior.cs" />
     <Compile Include="Controls\PriceChangeArrow.cs" />
     <Compile Include="Controls\WatermarkedTextBox.cs" />
     <Compile Include="Converters\PriceChangeColorConverter.cs" />
@@ -196,6 +193,14 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71.Extensions\Caliburn.Micro.WP71.Extensions.csproj">
+      <Project>{FDA153CE-6970-48AA-A720-293A4F91D134}</Project>
+      <Name>Caliburn.Micro.WP71.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71\Caliburn.Micro.WP71.csproj">
+      <Project>{B3F474B3-85C7-482D-9382-097CF64BCBB0}</Project>
+      <Name>Caliburn.Micro.WP71</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealWorldStocks.Client.BackgroundAgent\RealWorldStocks.Client.BackgroundAgent.csproj">
       <Project>{8EA66F2E-66B9-4765-AB91-1D4FF3E5618D}</Project>
       <Name>RealWorldStocks.Client.BackgroundAgent</Name>

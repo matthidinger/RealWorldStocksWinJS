@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Web.Mvc;
 using RealWorldStocks.Web.Helpers;
 using RealWorldStocks.Web.Services;
@@ -27,13 +26,12 @@ namespace RealWorldStocks.Web.Controllers
             return Json(model);
         }
 
-        public ActionResult GetNews(string[] symbols, int gmtOffset)
+        public ActionResult GetNews(string[] symbols, int utcOffset)
         {
             //Thread.Sleep(2000);
-            var model = _newsService.GetNews(symbols, gmtOffset);
+            var model = _newsService.GetNews(symbols, utcOffset);
             return Json(model);
         }
-
 
         public ActionResult GetSnapshot(string symbol)
         {

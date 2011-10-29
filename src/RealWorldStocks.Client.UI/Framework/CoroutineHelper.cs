@@ -1,4 +1,4 @@
-using RealWorldStocks.Client.Core.Data;
+using RealWorldStocks.Client.Core.Web;
 
 namespace RealWorldStocks.Client.UI.Framework
 {

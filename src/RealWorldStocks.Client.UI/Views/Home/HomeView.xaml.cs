@@ -1,5 +1,4 @@
 ﻿using Microsoft.Phone.Controls;
-using RealWorldStocks.Client.UI.Helpers;
 
 namespace RealWorldStocks.Client.UI.Views.Home
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RealWorldStocks.Client.Core.Helpers
+namespace RealWorldStocks.Client.Core
 {
     public static class EnumExtensions
     {

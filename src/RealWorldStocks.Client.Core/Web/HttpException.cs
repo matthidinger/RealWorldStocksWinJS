@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Net;
 using System;
 
-namespace RealWorldStocks.Client.Core.Data
+namespace RealWorldStocks.Client.Core.Web
 {
     public class HttpException : Exception
     {

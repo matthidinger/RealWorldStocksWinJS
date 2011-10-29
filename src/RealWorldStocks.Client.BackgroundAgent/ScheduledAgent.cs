@@ -2,8 +2,8 @@
 using System.Linq;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
-using RealWorldStocks.Client.Core.Data;
-using RealWorldStocks.Client.Core.Data.Services;
+using RealWorldStocks.Client.Core.Web;
+using RealWorldStocks.Client.Core.Web.Services;
 
 namespace RealWorldStocks.Client.BackgroundAgent
 {
@@ -30,7 +30,7 @@ namespace RealWorldStocks.Client.BackgroundAgent
                 return;
             }
 
-            HttpClient.BeginGetRequest(stocksService.GetWatchListSnapshots(),
+            HttpClient.BeginRequest(stocksService.GetWatchListSnapshots(),
                                        response =>
                                            {
                                                if(!response.HasError)
