@@ -15,8 +15,8 @@ namespace RealWorldStocks.Web.Controllers
 
         public StocksController()
         {
-            _stocksService = new FakeStocksService();
-            _newsService = new FakeNewsService();
+            _stocksService = new YahooStocksService();
+            _newsService = new YahooNewsService();
         }
         
         public ActionResult GetSnapshots(string[] symbols)
@@ -33,6 +33,7 @@ namespace RealWorldStocks.Web.Controllers
             return Json(model);
         }
 
+        [OutputCache(Duration = 60)]
         public ActionResult GetSnapshot(string symbol)
         {
             return GetSnapshots(new[] { symbol });

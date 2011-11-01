@@ -7,7 +7,7 @@ using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Web.Services
 {
-    public class YahooFinanceNewsService : INewsService
+    public class YahooNewsService : INewsService
     {
         public IEnumerable<News> GetNews(string[] symbols, int utcOffset)
         {

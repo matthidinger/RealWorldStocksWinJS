@@ -2,11 +2,6 @@
 {
     public class StockSnapshot : NotifyObject
     {
-        public StockSnapshot()
-        {
-            
-        }
-
         public StockSnapshot(string symbol)
         {
             Symbol = symbol;
@@ -64,6 +59,7 @@
             {
                 _daysChange = value;
                 NotifyOfPropertyChange(() => DaysChange);
+                NotifyOfPropertyChange(() => DaysChangeFormatted);
             }
         }
 

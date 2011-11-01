@@ -6,21 +6,6 @@ namespace RealWorldStocks.Web.Helpers
 {
     public class CompressAttribute : ActionFilterAttribute
     {
-        //public override void OnResultExecuted(ResultExecutedContext filterContext)
-        //{
-        //    if (filterContext.Exception != null)
-        //        return;
-
-        //    HttpResponseBase response = filterContext.HttpContext.Response;
-
-        //    response.Filter = new GZipStream(response.Filter, CompressionMode.Compress);
-        //    response.AppendHeader("Content-encoding", "gzip");
-
-        //    base.OnResultExecuted(filterContext);
-        //}
-
-
-
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
             var request = filterContext.HttpContext.Request;

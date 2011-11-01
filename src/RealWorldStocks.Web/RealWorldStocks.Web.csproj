@@ -91,7 +91,7 @@
     <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\IStocksService.cs" />
     <Compile Include="Services\FakeNewsService.cs" />
-    <Compile Include="Services\YahooFinanceNewsService.cs" />
+    <Compile Include="Services\YahooNewsService.cs" />
     <Compile Include="Services\YahooStocksService.cs" />
   </ItemGroup>
   <ItemGroup>
