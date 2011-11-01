@@ -10,7 +10,7 @@
     d:DesignHeight="480" d:DesignWidth="480">
 	<UserControl.Resources>
 		<DataTemplate x:Key="WatchListItemTemplate">
-			<HyperlinkButton Style="{StaticResource StretchingContentControl}" Width="410" Height="70" cal:Message.Attach="LoadSymbol($dataContext)" Margin="0,12">
+			<HyperlinkButton Style="{StaticResource EmptyButtonStyle}" Width="410" Height="70" cal:Message.Attach="LoadSymbol($dataContext)" Margin="0,12">
 				<Grid>                
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition/>

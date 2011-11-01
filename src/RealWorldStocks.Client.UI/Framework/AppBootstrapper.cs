@@ -41,6 +41,7 @@ namespace RealWorldStocks.Client.UI.Framework
 
             _container.PerRequest<BasicHttpViewModel>();
             _container.PerRequest<StockDetailsViewModel>();
+            _container.PerRequest<InfoViewModel>();
 
             AddCustomConventions();
         }

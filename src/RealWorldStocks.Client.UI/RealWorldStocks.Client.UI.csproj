@@ -94,6 +94,7 @@
     <Compile Include="ViewModels\Home\HomeWatchListViewModel.cs" />
     <Compile Include="Framework\IAppBarController.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\StockDetails\InfoViewModel.cs" />
     <Compile Include="ViewModels\StockDetails\StockDetailsViewModel.cs" />
     <Compile Include="ViewModels\StockQuoteViewModel.cs" />
     <Compile Include="Views\Home\HomeNewsView.xaml.cs">
@@ -115,6 +116,9 @@
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockDetails\InfoView.xaml.cs">
+      <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StockDetails\StockDetailsView.xaml.cs">
       <DependentUpon>StockDetailsView.xaml</DependentUpon>
@@ -162,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StockDetails\InfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

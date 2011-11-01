@@ -7,9 +7,12 @@ namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
     {
         private readonly INavigationService _navigation;
 
-        public StockDetailsViewModel(INavigationService navigation)
+        public StockDetailsViewModel(INavigationService navigation, InfoViewModel info)
         {
             _navigation = navigation;
+
+            //info.Snapshot = Snapshot;
+            //Items.Add(info);
         }
 
         private string _symbol;
