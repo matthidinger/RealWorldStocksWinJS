@@ -15,8 +15,8 @@ namespace RealWorldStocks.Web.Controllers
 
         public StocksController()
         {
-            _stocksService = new YahooStocksService();
-            _newsService = new YahooFinanceNewsService();
+            _stocksService = new FakeStocksService();
+            _newsService = new FakeNewsService();
         }
         
         public ActionResult GetSnapshots(string[] symbols)

@@ -16,8 +16,7 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <TextBlock Text="{Binding Snapshot.LastPrice}"></TextBlock>
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,-1,0,1">       
         <controls:Pivot x:Name="Items" Title="{Binding Symbol}">
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>

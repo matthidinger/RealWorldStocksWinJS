@@ -13,7 +13,7 @@ namespace RealWorldStocks.Web.Services
                 Select((symbol, index) =>
                        new News
                            {
-                               Title = "News " + index,
+                               Title = "Lorem ispum lorem ipsum",
                                ArticleDate = DateTime.Now.AddDays(1 - index),
                                Url = "http://www.matthidinger.com"
                            });

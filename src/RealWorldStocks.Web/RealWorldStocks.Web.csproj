@@ -87,6 +87,7 @@
     <Compile Include="Helpers\CompressAttribute.cs" />
     <Compile Include="Helpers\NoCacheAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FakeStocksService.cs" />
     <Compile Include="Services\INewsService.cs" />
     <Compile Include="Services\IStocksService.cs" />
     <Compile Include="Services\FakeNewsService.cs" />
