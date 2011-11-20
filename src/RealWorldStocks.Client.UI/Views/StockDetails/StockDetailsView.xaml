@@ -7,17 +7,26 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     Style="{StaticResource DefaultPageTransitionStyle}"
-    
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
-    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,-1,0,1">       
-        <controls:Pivot x:Name="Items" Title="{Binding Symbol}">
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="false">
+            <shell:ApplicationBar.Buttons>
+                <cal:AppBarButton Text="Refresh" Message="Refresh" IconUri="/Assets/Icons/appbar.refresh.rest.png"></cal:AppBarButton>
+            </shell:ApplicationBar.Buttons>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Pivot x:Name="Items" Title="{Binding Symbol}" Margin="0,2,0,-2">
             <controls:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding DisplayName}" />
