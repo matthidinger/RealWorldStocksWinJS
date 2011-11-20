@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace RealWorldStocks.Web.Helpers
 {
-    public class NoCacheAttribute : ActionFilterAttribute
+    public class NoClientCacheAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {

@@ -59,12 +59,12 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
                 .Navigate();
         }
 
-public void RefreshData()
-{
-    var refreshableChild = ActiveItem as IRefreshable;
-    if (refreshableChild != null)
-        refreshableChild.RefreshData();
-}
+        public void RefreshData()
+        {
+            var refreshableChild = ActiveItem as IRefreshable;
+            if (refreshableChild != null)
+                refreshableChild.RefreshData();
+        }
 
         public IApplicationBar ApplicationBar
         {

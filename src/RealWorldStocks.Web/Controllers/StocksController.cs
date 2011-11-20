@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 using RealWorldStocks.Web.Helpers;
 using RealWorldStocks.Web.Services;
@@ -6,7 +7,7 @@ using RealWorldStocks.Web.Services;
 namespace RealWorldStocks.Web.Controllers
 {
     [AllowJsonGet]
-    [NoCache]
+    [NoClientCache]
     [Compress]
     public class StocksController : Controller
     {
@@ -16,7 +17,7 @@ namespace RealWorldStocks.Web.Controllers
         public StocksController()
         {
             _stocksService = new YahooStocksService();
-            _newsService = new YahooNewsService();
+            _newsService = new YahooFinanceNewsService();
         }
         
         public ActionResult GetSnapshots(string[] symbols)
@@ -36,7 +37,7 @@ namespace RealWorldStocks.Web.Controllers
         [OutputCache(Duration = 60)]
         public ActionResult GetSnapshot(string symbol)
         {
-            return GetSnapshots(new[] { symbol });
+            return Json(_stocksService.GetSnapshots(new[] { symbol}).First());
         }
     }
 }

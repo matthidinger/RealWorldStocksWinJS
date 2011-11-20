@@ -37,7 +37,7 @@
 							<RowDefinition Height="0.5*"/>
 							<RowDefinition Height="0.5*" />
 						</Grid.RowDefinitions>
-						<TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
+                        <TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
 						<TextBlock Text="{Binding DaysChangePercentFormatted}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Top"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"/>
 					</Grid>
 				</Grid>
