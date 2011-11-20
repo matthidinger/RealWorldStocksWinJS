@@ -10,45 +10,35 @@ using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 {
-    public class InfoViewModel : Screen, IRefreshable
+    public class NewsViewModel : Screen //, IRefreshable
     {
         private readonly IStocksWebService _stocksWebService;
 
-        public InfoViewModel(IStocksWebService stocksWebService)
+        public NewsViewModel(IStocksWebService stocksWebService)
         {
             _stocksWebService = stocksWebService;
-            DisplayName = "info";
+            DisplayName = "news";
         }
 
-        private StockSnapshot _snapshot;
-        public StockSnapshot Snapshot
-        {
-            get { return _snapshot; }
-            set
-            {
-                _snapshot = value;
-                NotifyOfPropertyChange(() => Snapshot);
-            }
-        }
-
+        public StockSnapshot Snapshot { get; set; }
         public string Symbol { get; set; }
 
-        protected override void OnInitialize()
-        {
-            RefreshData();
-        }
+        //protected override void OnInitialize()
+        //{
+        //    RefreshData();
+        //}
 
-        public void RefreshData()
-        {
-            BusyIndictator.Show("Loading most recent snapshot...");
+        //public void RefreshData()
+        //{
+        //    BusyIndictator.Show("Loading most recent snapshot...");
 
-            // TODO: Move this to OnViewReady in CM 1.3
-            ThreadPool.QueueUserWorkItem(callback =>
-            {
-                Thread.Sleep(1000);
-                Coroutine.BeginExecute(UpdateDetails().GetEnumerator());
-            });
-        }
+        //    // TODO: Move this to OnViewReady in CM 1.3
+        //    ThreadPool.QueueUserWorkItem(callback =>
+        //    {
+        //        Thread.Sleep(1000);
+        //        Coroutine.BeginExecute(UpdateDetails().GetEnumerator());
+        //    });
+        //}
 
         private IEnumerable<IResult> UpdateDetails()
         {
@@ -57,7 +47,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 
             if (!request.Response.HasError)
             {
-                Snapshot = request.Response.Model;
+                // TODO: Bind
             }
             else
             {
