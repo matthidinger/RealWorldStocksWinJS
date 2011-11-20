@@ -22,7 +22,7 @@ namespace RealWorldStocks.Client.Core.Models
                 Current.LoadFromCache();
             }
         }
-
+         
         public static TCollection Current { get; private set; }
         protected abstract IEnumerable<TItem> DefaultItems { get; }
 
