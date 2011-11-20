@@ -40,6 +40,30 @@
             }
         }
 
+        private decimal _lowPrice;
+        public decimal LowPrice
+        {
+            get { return _lowPrice; }
+            set
+            {
+                _lowPrice = value;
+                NotifyOfPropertyChange(() => LowPrice);
+            }
+        }
+
+        private decimal _highPrice;
+        public decimal HighPrice
+        {
+            get { return _highPrice; }
+            set
+            {
+                _highPrice = value;
+                NotifyOfPropertyChange(() => HighPrice);
+            }
+        }
+
+
+
         private decimal _lastPrice;
         public decimal LastPrice
         {
@@ -50,6 +74,84 @@
                 NotifyOfPropertyChange(() => LastPrice);
             }
         }
+
+        private decimal _divAndYield;
+        public decimal DivAndYield
+        {
+            get { return _divAndYield; }
+            set
+            {
+                _divAndYield = value;
+                NotifyOfPropertyChange(() => DivAndYield);
+            }
+        }
+
+        private decimal _pERatio;
+        public decimal PERatio
+        {
+            get { return _pERatio; }
+            set
+            {
+                _pERatio = value;
+                NotifyOfPropertyChange(() => PERatio);
+            }
+        }
+
+        private int _averageVolume;
+        public int AverageVolume
+        {
+            get { return _averageVolume; }
+            set
+            {
+                _averageVolume = value;
+                NotifyOfPropertyChange(() => AverageVolume);
+            }
+        }
+
+        private decimal _marketCap;
+        public decimal MarketCap
+        {
+            get { return _marketCap; }
+            set
+            {
+                _marketCap = value;
+                NotifyOfPropertyChange(() => MarketCap);
+            }
+        }
+
+        private decimal _ask;
+        public decimal Ask
+        {
+            get { return _ask; }
+            set
+            {
+                _ask = value;
+                NotifyOfPropertyChange(() => Ask);
+            }
+        }
+
+        private decimal _bid;
+        public decimal Bid
+        {
+            get { return _bid; }
+            set
+            {
+                _bid = value;
+                NotifyOfPropertyChange(() => Bid);
+            }
+        }
+
+        private decimal _oneYearEstimate;
+        public decimal OneYearEstimate
+        {
+            get { return _oneYearEstimate; }
+            set
+            {
+                _oneYearEstimate = value;
+                NotifyOfPropertyChange(() => OneYearEstimate);
+            }
+        }
+
 
         private decimal _daysChange;
         public decimal DaysChange

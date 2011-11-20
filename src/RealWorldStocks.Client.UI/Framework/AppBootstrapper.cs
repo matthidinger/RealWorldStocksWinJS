@@ -21,8 +21,6 @@ namespace RealWorldStocks.Client.UI.Framework
 
         protected override void Configure()
         {
-            //ActionMessage.ApplyAvailabilityEffect = context => true;
-
             LogManager.GetLog = type => new DebugLog();
 
             _container = new PhoneContainer(RootFrame);
@@ -36,12 +34,15 @@ namespace RealWorldStocks.Client.UI.Framework
             _container.Singleton<HomeWatchListViewModel>();
             _container.Singleton<HomeQuoteViewModel>();
 
-            _container.Singleton<SettingsViewModel>();
 
-
-            _container.PerRequest<BasicHttpViewModel>();
             _container.PerRequest<StockDetailsViewModel>();
             _container.PerRequest<InfoViewModel>();
+            _container.PerRequest<NewsViewModel>();
+            _container.PerRequest<TrendsViewModel>();
+
+
+            _container.Singleton<SettingsViewModel>();
+            _container.PerRequest<BasicHttpViewModel>();
 
             AddCustomConventions();
         }

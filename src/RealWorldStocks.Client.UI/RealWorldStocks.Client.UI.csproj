@@ -26,7 +26,7 @@
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <Utf8Output>true</Utf8Output>
-    <ExpressionBlendVersion>4.0.30701.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -94,6 +94,8 @@
     <Compile Include="ViewModels\Home\HomeWatchListViewModel.cs" />
     <Compile Include="Framework\IAppBarController.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\StockDetails\TrendsViewModel.cs" />
+    <Compile Include="ViewModels\StockDetails\NewsViewModel.cs" />
     <Compile Include="ViewModels\StockDetails\InfoViewModel.cs" />
     <Compile Include="ViewModels\StockDetails\StockDetailsViewModel.cs" />
     <Compile Include="ViewModels\StockQuoteViewModel.cs" />
@@ -120,8 +122,17 @@
     <Compile Include="Views\StockDetails\InfoView.xaml.cs">
       <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StockDetails\ItemDetail.xaml.cs">
+      <DependentUpon>ItemDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockDetails\NewsView.xaml.cs">
+      <DependentUpon>NewsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StockDetails\StockDetailsView.xaml.cs">
       <DependentUpon>StockDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockDetails\TrendsView.xaml.cs">
+      <DependentUpon>TrendsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -173,7 +184,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\StockDetails\ItemDetail.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockDetails\NewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StockDetails\StockDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StockDetails\TrendsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

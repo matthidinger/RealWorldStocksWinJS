@@ -23,6 +23,10 @@
             <Button x:Name="GetSnapshot" Content="Go" Grid.Column="1"/>
         	<Controls:WatermarkedTextBox x:Name="Symbol" WatermarkText="enter symbol" />
         </Grid>
-        <TextBlock Text="{Binding Snapshot.Symbol}" Grid.Row="1" />
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="{Binding Snapshot.Symbol}"  />
+            <TextBlock Text="{Binding Snapshot.LastPrice}" Grid.Row="1" />
+            <TextBlock Text="{Binding Snapshot.DaysChangeFormatted}" Grid.Row="1" />
+            </StackPanel>
     </Grid>
 </UserControl>

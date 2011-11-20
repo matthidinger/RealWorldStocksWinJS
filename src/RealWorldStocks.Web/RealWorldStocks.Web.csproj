@@ -85,7 +85,7 @@
     </Compile>
     <Compile Include="Helpers\AllowJsonGetAttribute.cs" />
     <Compile Include="Helpers\CompressAttribute.cs" />
-    <Compile Include="Helpers\NoCacheAttribute.cs" />
+    <Compile Include="Helpers\NoClientCacheAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FakeStocksService.cs" />
     <Compile Include="Services\INewsService.cs" />
