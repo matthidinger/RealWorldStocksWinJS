@@ -3,46 +3,46 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Controls="clr-namespace:RealWorldStocks.Client.UI.Controls" 
 	x:Class="RealWorldStocks.Client.UI.Views.Home.HomeWatchListView"
     xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:local="clr-namespace:RealWorldStocks.Client.UI.Controls" 
     mc:Ignorable="d"
     d:DesignHeight="480" d:DesignWidth="480">
 	<UserControl.Resources>
-		<DataTemplate x:Key="WatchListItemTemplate">
-			<HyperlinkButton Style="{StaticResource EmptyButtonStyle}" Width="410" Height="70" cal:Message.Attach="LoadSymbol($dataContext)" Margin="0,12">
-				<Grid>                
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition/>
-						<ColumnDefinition Width="95.333"/>
-					</Grid.ColumnDefinitions>
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="0.529*"/>
-							<RowDefinition Height="0.471*"/>
-						</Grid.RowDefinitions>
-						<TextBlock Text="{Binding Symbol}" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Bottom"/>
-						<TextBlock Text="{Binding Company}" Grid.Row="1" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top"/>
-					</Grid>
-					<Grid HorizontalAlignment="Right" Width="136" d:LayoutOverrides="HorizontalMargin">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="0.595*"/>
-							<ColumnDefinition Width="0.405*"/>
-						</Grid.ColumnDefinitions>
-						<TextBlock Text="{Binding LastPrice}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" Margin="0" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right" FontSize="26.667" />
-						<Controls:PriceChangeArrow Price="{Binding DaysChange}"  Grid.Column="1" Width="30" Height="30" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" VerticalAlignment="Center" Margin="0,2,0,0"/>
-					</Grid>
-					<Grid Grid.Column="1">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="0.5*"/>
-							<RowDefinition Height="0.5*" />
-						</Grid.RowDefinitions>
-                        <TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
-						<TextBlock Text="{Binding DaysChangePercentFormatted}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Top"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"/>
-					</Grid>
-				</Grid>
-			</HyperlinkButton>
-        </DataTemplate>
+<DataTemplate x:Key="WatchListItemTemplate">
+	<HyperlinkButton Style="{StaticResource EmptyButtonStyle}" Width="410" Height="70" cal:Message.Attach="LoadSymbol($dataContext)" Margin="0,12">
+		<Grid>                
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="95.333"/>
+			</Grid.ColumnDefinitions>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.529*"/>
+					<RowDefinition Height="0.471*"/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="{Binding Symbol}" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Bottom"/>
+				<TextBlock Text="{Binding Company}" Grid.Row="1" Style="{StaticResource PhoneTextAccentStyle}" VerticalAlignment="Top"/>
+			</Grid>
+			<Grid HorizontalAlignment="Right" Width="136" d:LayoutOverrides="HorizontalMargin">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.595*"/>
+					<ColumnDefinition Width="0.405*"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Text="{Binding LastPrice}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" Margin="0" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right" FontSize="26.667" />
+				<local:PriceChangeArrow Price="{Binding DaysChange}"  Grid.Column="1" Width="30" Height="30" Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" VerticalAlignment="Center" Margin="0,2,0,0"/>
+			</Grid>
+			<Grid Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.5*"/>
+					<RowDefinition Height="0.5*" />
+				</Grid.RowDefinitions>
+                <TextBlock Text="{Binding DaysChangeFormatted}" Style="{StaticResource PhoneTextNormalStyle}" Grid.Row="0" VerticalAlignment="Bottom"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"  />
+				<TextBlock Text="{Binding DaysChangePercentFormatted}" Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" VerticalAlignment="Top"  Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" HorizontalAlignment="Right"/>
+			</Grid>
+		</Grid>
+	</HyperlinkButton>
+</DataTemplate>
 	</UserControl.Resources>
     
 	<UserControl.FontFamily>

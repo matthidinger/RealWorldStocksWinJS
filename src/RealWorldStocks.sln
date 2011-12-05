@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldStocks.Client.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldStocks.Client.BackgroundAgent", "RealWorldStocks.Client.BackgroundAgent\RealWorldStocks.Client.BackgroundAgent.csproj", "{8EA66F2E-66B9-4765-AB91-1D4FF3E5618D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.WP71", "..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71\Caliburn.Micro.WP71.csproj", "{B3F474B3-85C7-482D-9382-097CF64BCBB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.WP71", "..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71\Caliburn.Micro.WP71.csproj", "{1AA45CEC-DF5D-49F7-B4E9-8CC32BCBD49C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.WP71.Extensions", "..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71.Extensions\Caliburn.Micro.WP71.Extensions.csproj", "{FDA153CE-6970-48AA-A720-293A4F91D134}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caliburn.Micro.WP71.Extensions", "..\..\..\Source Code\CaliburnMicro\src\Caliburn.Micro.WP71.Extensions\Caliburn.Micro.WP71.Extensions.csproj", "{4C378193-CF03-4B85-8F2A-B1C00B1720DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{8EA66F2E-66B9-4765-AB91-1D4FF3E5618D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EA66F2E-66B9-4765-AB91-1D4FF3E5618D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EA66F2E-66B9-4765-AB91-1D4FF3E5618D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3F474B3-85C7-482D-9382-097CF64BCBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3F474B3-85C7-482D-9382-097CF64BCBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3F474B3-85C7-482D-9382-097CF64BCBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3F474B3-85C7-482D-9382-097CF64BCBB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDA153CE-6970-48AA-A720-293A4F91D134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDA153CE-6970-48AA-A720-293A4F91D134}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDA153CE-6970-48AA-A720-293A4F91D134}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDA153CE-6970-48AA-A720-293A4F91D134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA45CEC-DF5D-49F7-B4E9-8CC32BCBD49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA45CEC-DF5D-49F7-B4E9-8CC32BCBD49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA45CEC-DF5D-49F7-B4E9-8CC32BCBD49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA45CEC-DF5D-49F7-B4E9-8CC32BCBD49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C378193-CF03-4B85-8F2A-B1C00B1720DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C378193-CF03-4B85-8F2A-B1C00B1720DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C378193-CF03-4B85-8F2A-B1C00B1720DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C378193-CF03-4B85-8F2A-B1C00B1720DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

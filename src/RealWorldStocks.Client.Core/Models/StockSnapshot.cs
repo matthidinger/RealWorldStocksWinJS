@@ -80,8 +80,8 @@
             }
         }
 
-        private decimal _divAndYield;
-        public decimal DivAndYield
+        private string _divAndYield;
+        public string DivAndYield
         {
             get { return _divAndYield; }
             set
@@ -113,8 +113,8 @@
             }
         }
 
-        private decimal _marketCap;
-        public decimal MarketCap
+        private string _marketCap;
+        public string MarketCap
         {
             get { return _marketCap; }
             set
@@ -124,8 +124,8 @@
             }
         }
 
-        private decimal _ask;
-        public decimal Ask
+        private string _ask;
+        public string Ask
         {
             get { return _ask; }
             set
@@ -135,8 +135,8 @@
             }
         }
 
-        private decimal _bid;
-        public decimal Bid
+        private string _bid;
+        public string Bid
         {
             get { return _bid; }
             set

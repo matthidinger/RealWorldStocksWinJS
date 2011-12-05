@@ -10,6 +10,14 @@ namespace RealWorldStocks.Client.UI.ViewModels
     {
         private readonly IStocksWebService _stocksWebService;
 
+        public BasicHttpViewModel()
+        {
+            if(Execute.InDesignMode)
+            {
+                Symbol = "Test";
+            }
+        }
+
         public BasicHttpViewModel(IStocksWebService stocksWebService)
         {
             _stocksWebService = stocksWebService;

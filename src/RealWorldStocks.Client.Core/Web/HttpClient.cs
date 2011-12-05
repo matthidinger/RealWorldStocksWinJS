@@ -33,7 +33,7 @@ namespace RealWorldStocks.Client.Core.Web
             var timer = (Timer) e.UserState;
             if (timer != null)
                 timer.Dispose();
-
+            
             try
             {
                 if (e.Error == null)

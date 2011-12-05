@@ -34,7 +34,7 @@ namespace RealWorldStocks.Web.Controllers
             return Json(model);
         }
 
-        [OutputCache(Duration = 60)]
+        //[OutputCache(Duration = 60)]
         public ActionResult GetSnapshot(string symbol)
         {
             return Json(_stocksService.GetSnapshots(new[] { symbol}).First());
