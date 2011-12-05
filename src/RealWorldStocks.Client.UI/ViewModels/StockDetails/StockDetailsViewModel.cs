@@ -3,7 +3,7 @@ using RealWorldStocks.Client.Core.Models;
 
 namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 {
-    public class StockDetailsViewModel : Conductor<IScreen>.Collection.OneActive
+    public class StockDetailsViewModel : Conductor<IScreen>.Collection.OneActive, IRefreshable
     {
         private readonly INavigationService _navigation;
         private readonly InfoViewModel _info;
@@ -44,6 +44,15 @@ namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
         public StockSnapshot Snapshot
         {
             get { return GlobalData.Current.Snapshots[Symbol]; }
+        }
+
+        public void RefreshData()
+        {
+            var refreshableChild = ActiveItem as IRefreshable;
+            if(refreshableChild != null)
+            {
+                refreshableChild.RefreshData();
+            }
         }
     }
 }

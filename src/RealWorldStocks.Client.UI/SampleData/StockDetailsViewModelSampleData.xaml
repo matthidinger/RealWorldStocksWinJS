@@ -1,0 +1,42 @@
+﻿<RealWorldStocks_Client_UI_ViewModels_StockDetails:StockDetailsViewModel xmlns:RealWorldStocks_Client_UI_ViewModels_StockDetails="clr-namespace:RealWorldStocks.Client.UI.ViewModels.StockDetails" xmlns:RealWorldStocks_Client_Core_Models="clr-namespace:RealWorldStocks.Client.Core.Models;assembly=RealWorldStocks.Client.Core" xmlns:System="clr-namespace:System;assembly=mscorlib" Symbol="A. Datum Corporation">
+	<RealWorldStocks_Client_UI_ViewModels_StockDetails:StockDetailsViewModel.Snapshot>
+		<RealWorldStocks_Client_Core_Models:StockSnapshot AverageVolume="15" Company="A. Datum Corporation" DaysChangePercentFormatted="$100" DaysChangeFormatted="$100" Symbol="Cras" Volume="58">
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.Ask>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.Ask>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.Bid>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.Bid>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.DaysChange>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.DaysChange>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.DivAndYield>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.DivAndYield>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.HighPrice>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.HighPrice>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.LowPrice>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.LowPrice>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.LastPrice>
+				<System:Decimal>42</System:Decimal>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.LastPrice>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.MarketCap>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.MarketCap>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.OneYearEstimate>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.OneYearEstimate>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.OpeningPrice>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.OpeningPrice>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.PreviousClose>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.PreviousClose>
+			<RealWorldStocks_Client_Core_Models:StockSnapshot.PERatio>
+				<System:Decimal/>
+			</RealWorldStocks_Client_Core_Models:StockSnapshot.PERatio>
+		</RealWorldStocks_Client_Core_Models:StockSnapshot>
+	</RealWorldStocks_Client_UI_ViewModels_StockDetails:StockDetailsViewModel.Snapshot>
+</RealWorldStocks_Client_UI_ViewModels_StockDetails:StockDetailsViewModel>

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Windows;
 using Caliburn.Micro;
-using RealWorldStocks.Client.Core.Models;
 using RealWorldStocks.Client.Core.Web.Services;
-using RealWorldStocks.Client.UI.Framework;
 
 namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 {

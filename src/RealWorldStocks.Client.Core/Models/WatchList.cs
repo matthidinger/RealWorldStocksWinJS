@@ -42,6 +42,7 @@ namespace RealWorldStocks.Client.Core.Models
                                        New = newS
                                    };
 
+            // TODO: I don't like this... Must be a better way to update them
 
             foreach (var snapshot in query)
             {
@@ -51,7 +52,17 @@ namespace RealWorldStocks.Client.Core.Models
                 snapshot.Orig.DaysChangePercentFormatted = snapshot.New.DaysChangePercentFormatted;
                 snapshot.Orig.OpeningPrice = snapshot.New.OpeningPrice;
                 snapshot.Orig.PreviousClose = snapshot.New.PreviousClose;
+                snapshot.Orig.LowPrice = snapshot.New.LowPrice;
+                snapshot.Orig.HighPrice = snapshot.New.HighPrice;
+                snapshot.Orig.DivAndYield = snapshot.New.DivAndYield;
+                snapshot.Orig.PERatio = snapshot.New.PERatio;
+                snapshot.Orig.AverageVolume = snapshot.New.AverageVolume;
                 snapshot.Orig.Volume = snapshot.New.Volume;
+                snapshot.Orig.MarketCap = snapshot.New.MarketCap;
+                snapshot.Orig.Ask = snapshot.New.Ask;
+                snapshot.Orig.Bid = snapshot.New.Bid;
+                snapshot.Orig.OneYearEstimate = snapshot.New.OneYearEstimate;
+
             }
         }
     }
