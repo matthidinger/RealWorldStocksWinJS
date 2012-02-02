@@ -40,7 +40,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.StockDetails
 
         public void RefreshData()
         {
-            BusyIndictator.Show("Loading most recent snapshot...");
+            BusyIndictator.Show("Refreshing with the latest snapshot...");
 
             // TODO: Move this to OnViewReady in CM 1.3
             ThreadPool.QueueUserWorkItem(callback =>
