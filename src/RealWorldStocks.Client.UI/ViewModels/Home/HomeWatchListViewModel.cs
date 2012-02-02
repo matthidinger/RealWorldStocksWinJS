@@ -43,7 +43,7 @@ namespace RealWorldStocks.Client.UI.ViewModels.Home
 
         public void RefreshData()
         {
-            BusyIndictator.Show("Loading watch list...");
+            BusyIndictator.Show("Getting the latest quotes...");
 
             // TODO: Move this to OnViewReady in CM 1.3
             ThreadPool.QueueUserWorkItem(callback =>
