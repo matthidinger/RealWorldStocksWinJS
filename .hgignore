@@ -32,3 +32,5 @@ _ReSharper*/
 *.[Pp]ublish.xml
 *.resharper
 LocalHostname.txt
+*.nupkg
+packages/**/*.dll
