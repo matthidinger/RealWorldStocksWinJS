@@ -1,0 +1,88 @@
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+}
+
+.watchList {
+	width: calc(100% - 120px);
+	height: 100%;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+    }
+	
+	.watchList {
+		width: calc(100% - 20px);
+	}
+	
+	.item-overlay {
+		width: calc(100% - 20px) !important;
+		height: 70px !important;
+	}
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+    }
+}
+
+
+
+.item-overlay {
+	width: 300px;
+	height: 100px;
+	display: -ms-grid;
+	-ms-grid-columns: 100px 1fr;
+	-ms-grid-rows: 50px 1fr;
+	background: rgba(253, 253, 253, 0.698);
+	padding: 10px;
+}
+
+.item-symbol {
+	font-weight: bold;
+}
+
+.item-subtitle {
+	-ms-grid-row: 2;
+	-ms-grid-column: 2;
+}
+
+.item-company {
+	-ms-grid-column: 2;
+	-ms-grid-column-align: end;
+	font-family: Segoe UI Light;
+}
+
+
+.item-arrow {
+	-ms-grid-row: 2;
+	-ms-grid-column-span: 2;
+	-ms-grid-row-align: end;
+	width: 30px;
+	height: 30px;
+}
+
+.item-lastPrice {
+	-ms-grid-row: 2;
+	-ms-grid-column-span: 2;
+	-ms-grid-row-align: end;
+	margin-left: 40px;
+}
+
+.item-changePercent {
+	-ms-grid-column: 2;
+	-ms-grid-row: 2;
+	-ms-grid-column-align: end;
+	-ms-grid-row-align: end;
+	font-weight: bold;
+}
+
+.item-changeValue {
+	-ms-grid-column: 2;
+	-ms-grid-row: 2;
+	-ms-grid-column-align: end;
+	-ms-grid-row-align: end;
+	margin-bottom: 20px;
+}
