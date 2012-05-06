@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RealWorldStocks.Windows.Client</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-light.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+
+    <!-- RealWorldStocks.Windows.Client references -->
+    <link href="/css/default.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/converters.js"></script>
+    <script type="text/javascript" src="/models/stockSnapshot.js"></script>
+    <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript" src="/js/services.js"></script> 
+    <script type="text/javascript" src="/models/appState.js"></script>  
+    <script src="/js/default.js"></script>
+    <script type="text/javascript" src="/js/navigator.js"></script>
+	<script type="text/javascript">WinJS.UI.processAll();</script>
+</head>
+<body>
+    <div id="contenthost" data-win-control="RealWorldStocks.PageControlNavigator" data-win-options="{home: '/views/homePage.html'}"></div>
+	<div id="addStockFlyout" data-win-control="WinJS.UI.Flyout">
+		<div class="win-content">
+            <h3>Symbol</h3>
+            <input id="addStockSymbol" type="text" />
+            <button id="addStockButton">Add</button>
+        </div>
+	</div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{sticky:true}">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type: 'flyout', icon:'add', label:'Add Stock', section:'selection', flyout:addStockFlyout}"></button>
+    	<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id:'deleteStockButton', icon: 'remove', label:'Remove', type:'button', section:'selection'}"></button>
+    	
+    </div>
+</body>
+</html>
