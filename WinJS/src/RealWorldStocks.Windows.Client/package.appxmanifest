@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="dc39dfd0-8e9c-48b2-9e76-618622ae4cae" Version="1.0.0.0" Publisher="CN=Matt" />
+  <Properties>
+    <DisplayName>RealWorldStocks.Windows.Client</DisplayName>
+    <Description>RealWorldStocks.Windows.Client</Description>
+    <PublisherDisplayName>Matt</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Real World Stocks" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Real World Stocks" ForegroundText="light" BackgroundColor="#000000">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
