@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="RealWorldStocks.Client.UI.Views.StockDetails.InfoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:RealWorldStocks.Client.UI" mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="0.5*"/>
+    		<RowDefinition Height="0.5*"/>
+    	</Grid.RowDefinitions>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.5*"/>
+    		<ColumnDefinition Width="0.5*"/>
+    	</Grid.ColumnDefinitions>
+        <StackPanel>
+            <local:ItemDetail Label="Open" Value="{Binding Snapshot.OpeningPrice}"></local:ItemDetail>
+            <local:ItemDetail Label="Low" Value="{Binding Snapshot.LowPrice}"></local:ItemDetail>
+            <local:ItemDetail Label="High" Value="{Binding Snapshot.HighPrice}"></local:ItemDetail>
+            <local:ItemDetail Label="Prev Close" Value="{Binding Snapshot.PreviousClose}"></local:ItemDetail>
+            <local:ItemDetail Label="Div &amp; Yield" Value="{Binding Snapshot.DivAndYield}"></local:ItemDetail>
+            <local:ItemDetail Label="P/E" Value="{Binding Snapshot.PERatio}"></local:ItemDetail>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <local:ItemDetail Label="Volume" Value="{Binding Snapshot.Volume}"></local:ItemDetail>
+            <local:ItemDetail Label="Avg Vol." Value="{Binding Snapshot.AverageVolume}"></local:ItemDetail>
+            <local:ItemDetail Label="Mkt Cap" Value="{Binding Snapshot.MarketCap}"></local:ItemDetail>
+            <local:ItemDetail Label="Ask" Value="{Binding Snapshot.Ask}"></local:ItemDetail>
+            <local:ItemDetail Label="Bid" Value="{Binding Snapshot.Bid}"></local:ItemDetail>
+            <local:ItemDetail Label="1 Year Est" Value="{Binding Snapshot.OneYearEstimate}"></local:ItemDetail>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
