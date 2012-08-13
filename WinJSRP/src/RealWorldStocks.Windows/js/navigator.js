@@ -120,12 +120,6 @@
                 // This is the root element of the current page.
                 pageElement: {
                     get: function () { return this.element.firstElementChild; }
-                },
-                
-                goHome: function () {
-                    var home = "/pages/home/home.html";
-                    //var home = document.getElementById("contenthost").winControl.home;
-                    nav.navigate(home);
                 }
             },
             {

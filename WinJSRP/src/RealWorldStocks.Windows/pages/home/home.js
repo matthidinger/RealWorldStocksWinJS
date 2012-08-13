@@ -11,6 +11,7 @@
         ready: function (element, options) {
 
             watchList.refresh();
+            
 
             //window.setInterval(function () {
             //    watchList.findSnapshot("MSFT").lastPrice = new Date().getSeconds();
