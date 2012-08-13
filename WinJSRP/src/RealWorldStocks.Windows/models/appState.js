@@ -12,7 +12,7 @@
         new RealWorldStocks.Models.StockSnapshot("F"),
         new RealWorldStocks.Models.StockSnapshot("GE"),
         new RealWorldStocks.Models.StockSnapshot("XOM"),
-        new RealWorldStocks.Models.StockSnapshot("NFLX"),
+        new RealWorldStocks.Models.StockSnapshot("NFLX")
     ];
 
     var watchList = new WinJS.Binding.List([], {
@@ -21,7 +21,7 @@
 
     watchList.findSnapshot = function (symbol) {
         /// <returns type="RealWorldStocks.Models.StockSnapshot" />
-        var found = this.filter(function (item) { return item.symbol === symbol });
+        var found = this.filter(function (item) { return item.symbol === symbol; });
         if (found.length > 0) {
             return found[0];
         }
@@ -53,9 +53,7 @@
                 watchList.forEach(function (item) {
                     raw.push(item.backingData);
                 });
-
-                //var json = JSON.stringify(watchList);
-                //localSettings.values["watchList"] = json;
+                
                 localSettings.values["watchList"] = JSON.stringify(raw);
                 complete();
             });
@@ -66,11 +64,13 @@
         restore: function () {
             return new WinJS.Promise(function (complete) {
 
-                if (localSettings.values.hasKey("watchList")) {
-                    var raw = JSON.parse(localSettings.values["watchList"]);
+                var stored = localSettings.values["watchList"];
+                if (stored) {
+                    var raw = JSON.parse(stored);
                     raw.forEach(function (item) {
                         watchList.push(item);
                     });
+
                 } else {
                     defaults.forEach(function (item) {
                         watchList.push(item);
