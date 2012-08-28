@@ -35,7 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>dc39dfd0-8e9c-48b2-9e76-618622ae4cae</ProjectGuid>
+    <ProjectGuid>c6de92e3-9d71-41ec-8e14-87d60f91f1c6</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
@@ -44,35 +44,34 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>RealWorldStocks.Windows.Client_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>A50A435FAC8EEDCEE6C42F14DC5ABC1C687DB1C9</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>RealWorldStocks.Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\homePage.css" />
-    <Content Include="default.html" />
+    <Content Include="css\default.css" />
     <Content Include="images\greenArrow.svg" />
-    <Content Include="images\redArrow.svg" />
-    <Content Include="js\converters.js" />
-    <Content Include="models\appState.js" />
-    <Content Include="models\stockSnapshot.js" />
-    <Content Include="viewModels\homePage.js" />
-    <Content Include="views\homePage.html" />
     <Content Include="images\logo.png" />
+    <Content Include="images\redArrow.svg" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
-    <Content Include="js\navigator.js" />
-    <Content Include="js\utils.js" />
+    <Content Include="js\converters.js" />
     <Content Include="js\default.js" />
-    <Content Include="css\default.css" />
+    <Content Include="js\navigator.js" />
     <Content Include="js\services.js" />
-    <None Include="RealWorldStocks.Windows.Client_TemporaryKey.pfx" />
+    <Content Include="js\utils.js" />
+    <Content Include="models\appState.js" />
+    <Content Include="models\stockSnapshot.js" />
+    <Content Include="pages\home\home.css" />
+    <Content Include="pages\home\home.html" />
+    <Content Include="pages\home\home.js" />
+    <Content Include="default.html" />
+    <None Include="RealWorldStocks.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="Microsoft.WinJS, Version=0.6" />
+    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
