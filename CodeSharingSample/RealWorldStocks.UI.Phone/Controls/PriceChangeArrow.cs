@@ -38,7 +38,7 @@ namespace RealWorldStocks.UI.Phone.Controls
         }
 
         public static readonly DependencyProperty PriceProperty =
-            DependencyProperty.Register("Price", typeof(decimal?), typeof(PriceChangeArrow), new PropertyMetadata(default(decimal?), PriceChanged));
+            DependencyProperty.Register("Price", typeof(decimal), typeof(PriceChangeArrow), new PropertyMetadata(default(decimal), PriceChanged));
 
 
         private static void PriceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -46,9 +46,9 @@ namespace RealWorldStocks.UI.Phone.Controls
             ((PriceChangeArrow) d).ChangeVisualState(true);
         }
 
-        public decimal? Price
+        public decimal Price
         {
-            get { return (decimal?)GetValue(PriceProperty); }
+            get { return (decimal)GetValue(PriceProperty); }
             set { SetValue(PriceProperty, value); }
         }
 
@@ -57,7 +57,7 @@ namespace RealWorldStocks.UI.Phone.Controls
         {
             get
             {
-                if (Price == null || Price >= 0)
+                if (Price >= 0)
                     return "Positive";
                 
                 return "Negative";
