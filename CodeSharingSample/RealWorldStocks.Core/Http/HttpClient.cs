@@ -35,25 +35,7 @@ namespace RealWorldStocks.Core.Http
             return ExecuteRequest(HttpVerbs.GET, requestUri);
         }
 
-        public Task<HttpResponseMessage> GetAsync(string requestUri, CancellationToken cancellationToken)
-        {
-            return GetAsync(requestUri);
-        }
 
-        public Task<HttpResponseMessage> GetAsync(Uri requestUri, CancellationToken cancellationToken)
-        {
-            return GetAsync(requestUri);
-        }
-
-        public Task<HttpResponseMessage> PostAsync(Uri requestUri, HttpContent content, CancellationToken cancellationToken)
-        {
-            return PostAsync(requestUri, content);
-        }
-
-        public Task<HttpResponseMessage> PostAsync(string requestUri, HttpContent content, CancellationToken cancellationToken)
-        {
-            return PostAsync(requestUri, content);
-        }
 
         public Task<HttpResponseMessage> PostAsync(string requestUri, HttpContent content)
         {

@@ -24,15 +24,15 @@ namespace RealWorldStocks.UI.Phone
             return result;
         }
 
-        public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
-        {
-            App.RootFrame.Navigate(new Uri(String.Format("/Views/{0}.xaml?{1}", sourcePageName, query), UriKind.Relative));
-        }
+        //public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
+        //{
+        //    App.RootFrame.Navigate(new Uri(String.Format("/Views/{0}.xaml?{1}", sourcePageName, query), UriKind.Relative));
+        //}
 
-        public override void NavigateBack()
-        {
-            App.RootFrame.GoBack();
-        }
+        //public override void NavigateBack()
+        //{
+        //    App.RootFrame.GoBack();
+        //}
 
         public override async void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan)
         {

@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RealWorldStocks.UI.Android\Activity1.cs">
+    <Files>
+      <File FileName="RealWorldStocks.UI.Android\Activity1.cs" Line="23" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.RealWorldStocks.UI.Android AndroidDeviceId-Debug="015d18848c180214" MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
+</Properties>
