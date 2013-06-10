@@ -122,6 +122,12 @@
     <Compile Include="..\RealWorldStocks.UI.Phone\Converters\RelativeDateTimeConverter.cs">
       <Link>Converters\RelativeDateTimeConverter.cs</Link>
     </Compile>
+    <Compile Include="..\RealWorldStocks.UI.Phone\ViewModels\HomeViewModel.cs">
+      <Link>ViewModels\HomeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\RealWorldStocks.UI.Phone\ViewModels\MainViewModel.cs">
+      <Link>ViewModels\MainViewModel.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -131,8 +137,8 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\HomePageItemTemplateSelector.cs" />
@@ -162,7 +168,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

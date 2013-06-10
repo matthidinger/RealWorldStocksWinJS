@@ -1,7 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Net;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows;
 using RealWorldStocks.Core;
@@ -12,18 +9,6 @@ namespace RealWorldStocks.UI.Phone
 {
     public class PhonePlatformAdapter : PlatformAdapter
     {
-        public override string ReadCompressedResponseStream(HttpWebResponse response)
-        {
-            string result;
-
-            using (var sr = new StreamReader(response.GetCompressedResponseStream()))
-            {
-                result = sr.ReadToEnd();
-            }
-
-            return result;
-        }
-
         public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
         {
             App.RootFrame.Navigate(new Uri(String.Format("/Views/{0}.xaml?{1}", sourcePageName, query), UriKind.Relative));

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using RealWorldStocks.Core.Http;
 
 namespace RealWorldStocks.Core.Models
 {
@@ -15,8 +15,8 @@ namespace RealWorldStocks.Core.Models
 
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(url);
-
-            var doc = XDocument.Parse(response.Content);
+            var str = await response.Content.ReadAsStringAsync();
+            var doc = XDocument.Parse(str);
 
             var model = doc.Descendants("item")
                 .Select(item =>
