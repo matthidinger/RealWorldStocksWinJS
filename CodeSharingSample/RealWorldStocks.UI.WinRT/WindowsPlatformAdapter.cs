@@ -1,7 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.IO.Compression;
-using System.Net;
 using System.Threading.Tasks;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Storage;
@@ -11,19 +8,6 @@ namespace RealWorldStocks.UI.WinRT
 {
     public class WindowsPlatformAdapter : PlatformAdapter
     {
-        public override string ReadCompressedResponseStream(HttpWebResponse response)
-        {
-            string result;
-
-            using (var gzipStream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress))
-            using (var sr = new StreamReader(gzipStream))
-            {
-                result = sr.ReadToEnd();
-            }
-
-            return result;
-        }
-
         public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
         {
             var type = Type.GetType(String.Format("RealWorldStocks.UI.WinRT.Views.{0}", sourcePageName));

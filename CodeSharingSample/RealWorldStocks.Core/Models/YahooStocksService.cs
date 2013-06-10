@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using RealWorldStocks.Core.Http;
-
 namespace RealWorldStocks.Core.Models
 {
     public class YahooStocksService
@@ -15,9 +14,10 @@ namespace RealWorldStocks.Core.Models
             var yahooData = await client.GetAsync(
                 string.Format("http://finance.yahoo.com/d/quotes.csv?s={0}&f=snol1vpc1p2ghyra2j1abe8", string.Join("+", symbols)));
 
-            yahooData.Content = yahooData.Content.TrimEnd('\r', '\n');
+            var csv = await yahooData.Content.ReadAsStringAsync();
+            csv = csv.TrimEnd('\r', '\n');
 
-            var snapshots = from line in yahooData.Content.Split(new[] { Environment.NewLine }, StringSplitOptions.None)
+            var snapshots = from line in csv.Split(new[] { Environment.NewLine }, StringSplitOptions.None)
                         let columns = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)").Select(s => s.Replace("\"", "")).ToList()
                         select new StockSnapshot
                         {

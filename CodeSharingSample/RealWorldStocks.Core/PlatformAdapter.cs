@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 using RealWorldStocks.Core.Storage;
 
 namespace RealWorldStocks.Core
@@ -10,9 +9,6 @@ namespace RealWorldStocks.Core
         /// Provides acess to the current platform adapter
         /// </summary>
         public static PlatformAdapter Current { get; set; }
-
-
-        public abstract string ReadCompressedResponseStream(HttpWebResponse response);
 
         public abstract void NavigateTo(string sourcePageName, object parameter = null, string query = null);
 

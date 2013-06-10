@@ -1,13 +1,11 @@
 ﻿<common:LayoutAwarePage
-    x:Class="RealWorldStocks.UI.WinRT.MainPage"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    x:Class="RealWorldStocks.UI.WinRT.Views.HomeView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:common="using:RealWorldStocks.UI.WinRT.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="using:RealWorldStocks.UI.WinRT.Models" 
-    xmlns:controls="using:RealWorldStocks.UI.Phone.Controls"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -19,79 +17,6 @@
             ItemsPath="Items"/>
 
         <x:String x:Key="AppName">Real-World Stocks</x:String>
-
-    
-        <DataTemplate x:Key="NewsItemTemplate">
-            <Grid HorizontalAlignment="Left" Width="250" Height="250">
-                <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                    
-                </Border>
-                <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                    <TextBlock Text="{Binding Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="60" Margin="15,0,15,0"/>
-                    <TextBlock Text="{Binding ArticleDate}" Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" Margin="15,0,15,10"/>
-                </StackPanel>
-            </Grid>
-        </DataTemplate>
-        
-        <DataTemplate x:Key="SnapshotItemTemplate">
-            <Grid Width="250" Height="100" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                
-                <Grid VerticalAlignment="Top" Margin="10,10">
-
-
-                    <TextBlock Text="{Binding Symbol}" 
-                               Style="{StaticResource TitleTextStyle}" />
-                    
-                    <TextBlock Text="{Binding Company}" 
-                               Style="{StaticResource CaptionTextStyle}" 
-                               HorizontalAlignment="Right"/>
-                    
-                </Grid>
-                
-                <Grid Grid.Row="1">
-                    
-                    <StackPanel Orientation="Horizontal">
-                        <controls:PriceChangeArrow Price="{Binding DaysChange}"  
-                                               Width="30" 
-                                               Height="30" 
-                                               Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" 
-                                               VerticalAlignment="Bottom" 
-                                               Margin="10,0,10,10"/>
-                        
-                        <TextBlock Text="{Binding LastPrice}" 
-                                   Style="{StaticResource TitleTextStyle}" 
-                                   Margin="0,0,0,10"
-                                   VerticalAlignment="Bottom" 
-                                   Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}" 
-                                   FontSize="26.667" />
-                    </StackPanel>
-                    
-                    <StackPanel HorizontalAlignment="Right" 
-                                VerticalAlignment="Bottom"
-                                Margin="0,0,10,10"
-                                Orientation="Vertical">
-                        
-                        <TextBlock Text="{Binding DaysChangeFormatted}" 
-                                   Style="{StaticResource CaptionTextStyle}" 
-                                   FontSize="14"
-                                   FontWeight="Bold"
-                                   Margin="0,0,0,1"
-                                   Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}"  />
-
-                        <TextBlock Text="{Binding DaysChangePercentFormatted}" 
-                                   Style="{StaticResource CaptionTextStyle}" 
-                                   FontSize="14"
-                                   Foreground="{Binding DaysChange, Converter={StaticResource PriceChangeColorConverter}}"  />
-                    </StackPanel>
-                
-                </Grid>
-        
-            </Grid>
-        </DataTemplate>
 
         <local:HomePageItemTemplateSelector x:Name="HomePageItemTemplateSelector"
                                             NewsItemTemplate="{StaticResource NewsItemTemplate}"
