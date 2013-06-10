@@ -45,8 +45,8 @@ namespace RealWorldStocks.UI.Phone
             Deployment.Current.Dispatcher.BeginInvoke(actionToInvoke);
         }
 
-
         private readonly ISettingsStore _fileStorage = new PhoneSettingsStore();
+
         public override ISettingsStore Settings
         {
             get { return _fileStorage; }

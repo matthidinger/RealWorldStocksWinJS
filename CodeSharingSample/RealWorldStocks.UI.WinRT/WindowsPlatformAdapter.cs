@@ -50,9 +50,11 @@ namespace RealWorldStocks.UI.WinRT
             App.RootFrame.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => actionToInvoke());
         }
 
+        private readonly ISettingsStore _settings = new WindowsSettingsStore();
+
         public override ISettingsStore Settings
         {
-            get { return new WindowsSettingsStore(); }
+            get { return _settings; }
         }
     }
 }
