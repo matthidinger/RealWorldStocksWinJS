@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{108B0A16-12B8-481A-B554-B35F1506B760}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldStocks.Shared", "RealWorldStocks.Shared\RealWorldStocks.Shared.csproj", "{8F28879D-59B8-46AE-959B-B4480B9FA132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealWorldStocks.UI.Android", "RealWorldStocks.UI.Android\RealWorldStocks.UI.Android.csproj", "{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Release|ARM.ActiveCfg = Release|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F28879D-59B8-46AE-959B-B4480B9FA132}.Release|x86.ActiveCfg = Release|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|x64.ActiveCfg = Release|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|x86.ActiveCfg = Release|Any CPU
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Debug|x86.Deploy.0 = Debug|x86
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Release|ARM.Deploy.0 = Release|ARM
+		{F870DC6B-6BEA-44E6-8608-9A916B52ABF8}.Release|x86.Deploy.0 = Release|x86
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Debug|x64.Deploy.0 = Debug|x64
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Debug|x86.Deploy.0 = Debug|x86
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Release|ARM.Deploy.0 = Release|ARM
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Release|x64.Deploy.0 = Release|x64
+		{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}.Release|x86.Deploy.0 = Release|x86
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B1C73DC9-7509-4B5C-89FF-4403E7BED2F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = RealWorldStocks.UI.Android\RealWorldStocks.UI.Android.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

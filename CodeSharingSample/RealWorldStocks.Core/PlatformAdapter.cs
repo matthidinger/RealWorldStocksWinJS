@@ -14,10 +14,6 @@ namespace RealWorldStocks.Core
 
         public abstract string ReadCompressedResponseStream(HttpWebResponse response);
 
-        public abstract void NavigateTo(string sourcePageName, object parameter = null, string query = null);
-
-        public abstract void NavigateBack();
-
         public abstract void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan);
 
         public abstract void BeginInvoke(Action actionToInvoke);

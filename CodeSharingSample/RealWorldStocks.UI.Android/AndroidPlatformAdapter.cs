@@ -5,11 +5,10 @@ using System.Net;
 using System.Threading.Tasks;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Storage;
-using RealWorldStocks.UI.WinRT.Storage;
 
-namespace RealWorldStocks.UI.WinRT
+namespace RealWorldStocks.UI.Android
 {
-    public class WindowsPlatformAdapter : PlatformAdapter
+    public class AndroidPlatformAdapter : PlatformAdapter
     {
         public override string ReadCompressedResponseStream(HttpWebResponse response)
         {
@@ -24,35 +23,23 @@ namespace RealWorldStocks.UI.WinRT
             return result;
         }
 
-        //public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
-        //{
-        //    var type = Type.GetType(String.Format("RealWorldStocks.UI.WinRT.Views.{0}", sourcePageName));
-
-        //    if (parameter != null)
-        //        App.RootFrame.Navigate(type, parameter);
-        //    else
-        //        App.RootFrame.Navigate(type, sourcePageName);
-        //}
-
-        //public override void NavigateBack()
-        //{
-        //    App.RootFrame.GoBack();
-        //}
-
         public override async void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan)
         {
-            await Task.Delay(timeSpan);
+            await Task.Delay((int)timeSpan.TotalMilliseconds);
             BeginInvoke(actionToInvoke);
         }
 
         public override void BeginInvoke(Action actionToInvoke)
         {
-            App.RootFrame.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => actionToInvoke());
+            actionToInvoke();
+            //Deployment.Current.Dispatcher.BeginInvoke(actionToInvoke);
         }
 
+
+        private readonly ISettingsStore _fileStorage = new AndroidSettingsStore();
         public override ISettingsStore Settings
         {
-            get { return new WindowsSettingsStore(); }
+            get { return _fileStorage; }
         }
     }
 }
