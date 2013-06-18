@@ -12,10 +12,7 @@ namespace RealWorldStocks.UI.WinRT
         {
             var type = Type.GetType(String.Format("RealWorldStocks.UI.WinRT.Views.{0}", sourcePageName));
 
-            if (parameter != null)
-                App.RootFrame.Navigate(type, parameter);
-            else
-                App.RootFrame.Navigate(type, sourcePageName);
+            App.RootFrame.Navigate(type, parameter ?? sourcePageName);
         }
 
         public override void NavigateBack()
@@ -23,15 +20,10 @@ namespace RealWorldStocks.UI.WinRT
             App.RootFrame.GoBack();
         }
 
-        public override async void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan)
-        {
-            await Task.Delay(timeSpan);
-            BeginInvoke(actionToInvoke);
-        }
 
-        public override void BeginInvoke(Action actionToInvoke)
+        public override Task InvokeAsync(Action actionToInvoke)
         {
-            App.RootFrame.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => actionToInvoke());
+            return App.RootFrame.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => actionToInvoke()).AsTask();
         }
 
         private readonly ISettingsStore _settings = new WindowsSettingsStore();

@@ -21,7 +21,7 @@ namespace RealWorldStocks.Client.UI.Framework
 
         protected override void Configure()
         {
-            LogManager.GetLog = type => new DebugLog();
+            //LogManager.GetLog = type => new DebugLog();
 
             _container = new PhoneContainer(RootFrame);
             _container.RegisterPhoneServices();

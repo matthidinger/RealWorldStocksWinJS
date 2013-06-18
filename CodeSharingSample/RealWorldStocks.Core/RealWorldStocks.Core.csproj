@@ -35,10 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Helpers\ConvertHelper.cs" />
     <Compile Include="Helpers\EnumerableExtensions.cs" />
     <Compile Include="Helpers\SerializationHelper.cs" />
     <Compile Include="Helpers\StreamExtensions.cs" />
+    <Compile Include="Helpers\TaskHelper.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Models\PersistentCollection.cs" />
     <Compile Include="Models\News.cs" />
@@ -50,10 +52,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\YahooStocksService.cs" />
     <Compile Include="Storage\ISettingsStore.cs" />
+    <Compile Include="ViewModels\HomeViewModelCore.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.3-beta\lib\portable-net40+sl4+win8+wp71\System.Net.Http.dll</HintPath>

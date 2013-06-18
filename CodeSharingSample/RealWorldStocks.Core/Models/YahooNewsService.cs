@@ -11,7 +11,7 @@ namespace RealWorldStocks.Core.Models
     {
         public async Task<ObservableCollection<News>> GetNewsAsync(string[] symbols)
         {
-            var url = string.Format("http://feeds.finance.yahoo.com/rss/2.0/headline?s={0}&region=US&lang=en-US", String.Join(",", symbols));
+            var url = string.Format("http://feeds.finance.yahoo.com/rss/2.0/headline?s={0}&region=US&lang=en-US", string.Join(",", symbols));
 
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(url);

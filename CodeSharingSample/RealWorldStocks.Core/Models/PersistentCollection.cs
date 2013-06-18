@@ -23,6 +23,7 @@ namespace RealWorldStocks.Core.Models
         }
 
         public static TCollection Current { get; private set; }
+
         protected abstract IEnumerable<TItem> DefaultItems { get; }
 
         public async Task LoadFromCacheAsync()
