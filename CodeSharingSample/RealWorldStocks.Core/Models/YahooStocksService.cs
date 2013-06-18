@@ -43,7 +43,5 @@ namespace RealWorldStocks.Core.Models
 
             return new ObservableCollection<StockSnapshot>(snapshots);
         }
-
-
     }
 }

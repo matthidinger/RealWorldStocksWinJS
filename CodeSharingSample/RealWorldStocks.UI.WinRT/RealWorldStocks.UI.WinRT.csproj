@@ -122,9 +122,6 @@
     <Compile Include="..\RealWorldStocks.UI.Phone\Converters\RelativeDateTimeConverter.cs">
       <Link>Converters\RelativeDateTimeConverter.cs</Link>
     </Compile>
-    <Compile Include="..\RealWorldStocks.UI.Phone\ViewModels\HomeViewModel.cs">
-      <Link>ViewModels\HomeViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\RealWorldStocks.UI.Phone\ViewModels\MainViewModel.cs">
       <Link>ViewModels\MainViewModel.cs</Link>
     </Compile>
@@ -137,6 +134,7 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -151,6 +149,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="RealWorldStocks.UI.WinRT_TemporaryKey.pfx" />
+    <PRIResource Include="Resources\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />

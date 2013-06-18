@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RealWorldStocks.Core.Storage;
 
 namespace RealWorldStocks.Core
@@ -14,9 +15,7 @@ namespace RealWorldStocks.Core
 
         public abstract void NavigateBack();
 
-        public abstract void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan);
-
-        public abstract void BeginInvoke(Action actionToInvoke);
+        public abstract Task InvokeAsync(Action actionToInvoke);
 
         public abstract ISettingsStore Settings { get; }
     }

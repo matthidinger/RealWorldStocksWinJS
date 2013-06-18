@@ -19,15 +19,23 @@ namespace RealWorldStocks.UI.Phone
             App.RootFrame.GoBack();
         }
 
-        public override async void DelayInvoke(Action actionToInvoke, TimeSpan timeSpan)
+        public override Task InvokeAsync(Action actionToInvoke)
         {
-            await Task.Delay((int)timeSpan.TotalMilliseconds);
-            BeginInvoke(actionToInvoke);
-        }
-
-        public override void BeginInvoke(Action actionToInvoke)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(actionToInvoke);
+            var tcs = new TaskCompletionSource<object>();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                try
+                {
+                    actionToInvoke();
+                    tcs.SetResult(null);
+                }
+                catch (Exception ex)
+                {
+                    tcs.TrySetException(ex);
+                }
+    
+            });
+            return tcs.Task;
         }
 
         private readonly ISettingsStore _fileStorage = new PhoneSettingsStore();

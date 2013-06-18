@@ -1,33 +1,20 @@
 ﻿using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
+
 namespace RealWorldStocks.UI.Phone.Views
 {
-    public partial class HomeView : PhoneApplicationPage
+    public partial class HomeView
     {
-        private bool _isNewPageInstance;
-
         public HomeView()
         {
             InitializeComponent();
-            _isNewPageInstance = true;
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            if (_isNewPageInstance)
-            {
-                DataContext = App.ViewModel.Home;
-                await App.ViewModel.Home.LoadAsync();
-            }
-
-            _isNewPageInstance = false;
+            DataContext = App.ViewModel.Home;
+            await App.ViewModel.Home.LoadAsync();
         }
-
-        //private void Refresh()
-        //{
-        //    App.ViewModel.Home.Refresh();
-        //}
     }
 }

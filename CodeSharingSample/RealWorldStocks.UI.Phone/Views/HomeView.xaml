@@ -13,6 +13,11 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.Opacity="0">
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsVisible="{Binding IsBusy}"
+                                 IsIndeterminate="{Binding IsBusy}"
+                                 Text="Loading..." />
+    </shell:SystemTray.ProgressIndicator>
 
   
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -33,5 +38,11 @@
             </phone:Panorama.Items>
         </phone:Panorama>
     </Grid>
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="false">
+            
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
   
 </phone:PhoneApplicationPage>
