@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml.Data;
 
-namespace RealWorldStocks.UI.WinRT.Common
+namespace RealWorldStocks.UI.Common
 {
     /// <summary>
     /// Value converter that translates true to false and vice versa.

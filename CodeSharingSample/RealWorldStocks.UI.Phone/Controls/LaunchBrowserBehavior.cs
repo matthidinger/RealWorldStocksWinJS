@@ -4,7 +4,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Interactivity;
 using Microsoft.Phone.Tasks;
 
-namespace RealWorldStocks.UI.Phone.Controls
+namespace RealWorldStocks.UI.Controls
 {
     public class LaunchBrowserBehavior : Behavior<ButtonBase>
     {

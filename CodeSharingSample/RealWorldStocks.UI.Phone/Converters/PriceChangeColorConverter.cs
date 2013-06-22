@@ -1,14 +1,13 @@
 using System;
-#if NETFX_CORE
-using Windows.UI;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Media;
-#else
-using System.Windows.Data;
+#if WINDOWS_PHONE
 using System.Windows.Media;
 #endif
+#if NETFX_CORE
+using Windows.UI;
+using Windows.UI.Xaml.Media;
+#endif
 
-namespace RealWorldStocks.UI.Phone.Converters
+namespace RealWorldStocks.UI.Converters
 {
     public class PriceChangeColorConverter : ConverterBase
     {

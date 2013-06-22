@@ -1,11 +1,10 @@
 using System;
+using System.Windows;
 #if NETFX_CORE
 using Windows.UI.Xaml;
-#else
-using System.Windows;
 #endif
 
-namespace RealWorldStocks.UI.Phone.Converters
+namespace RealWorldStocks.UI.Converters
 {
     public class BooleanToVisibilityConverter : ConverterBase
     {

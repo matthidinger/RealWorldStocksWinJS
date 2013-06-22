@@ -2,11 +2,12 @@
 using System.Threading.Tasks;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Models;
-using RealWorldStocks.UI.WinRT.Models;
+using RealWorldStocks.Core.ViewModels;
+using RealWorldStocks.UI.Models;
 
-namespace RealWorldStocks.UI.WinRT.ViewModels
+namespace RealWorldStocks.UI.ViewModels
 {
-    public class HomeViewModel : Core.BaseViewModels.HomeViewModelBase
+    public class HomeViewModel : HomeViewModelCore
     {
         public ObservableCollection<Group> Groups { get; private set; }
 

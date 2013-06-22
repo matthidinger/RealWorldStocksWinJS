@@ -5,7 +5,7 @@ using System.Windows.Data;
 using System.ComponentModel;
 using Microsoft.Phone.Controls;
 
-namespace RealWorldStocks.UI.Phone.Controls
+namespace RealWorldStocks.UI.Controls
 {
     /// <summary>
     /// A TextBox control with a watermark

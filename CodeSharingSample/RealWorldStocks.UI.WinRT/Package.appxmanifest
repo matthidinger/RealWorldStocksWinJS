@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="93c44c6e-1f9a-4295-985c-a4de9fafa7d0" Publisher="CN=Matt" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>RealWorldStocks.UI.WinRT</DisplayName>
+    <DisplayName>Real-world Stocks</DisplayName>
     <PublisherDisplayName>Matt</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RealWorldStocks.UI.WinRT.App">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="RealWorldStocks.UI.App">
       <VisualElements DisplayName="Realworld Stocks" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Realworld Stocks" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />

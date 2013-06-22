@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Storage;
-using RealWorldStocks.UI.Phone.Storage;
+using RealWorldStocks.UI.Storage;
 
-namespace RealWorldStocks.UI.Phone
+namespace RealWorldStocks.UI
 {
     public class PhonePlatformAdapter : PlatformAdapter
     {

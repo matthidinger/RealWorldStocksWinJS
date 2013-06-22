@@ -2,15 +2,15 @@
 using System.Threading.Tasks;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Storage;
-using RealWorldStocks.UI.WinRT.Storage;
+using RealWorldStocks.UI.Storage;
 
-namespace RealWorldStocks.UI.WinRT
+namespace RealWorldStocks.UI
 {
     public class WindowsPlatformAdapter : PlatformAdapter
     {
         public override void NavigateTo(string sourcePageName, object parameter = null, string query = null)
         {
-            var type = Type.GetType(String.Format("RealWorldStocks.UI.WinRT.Views.{0}", sourcePageName));
+            var type = Type.GetType(String.Format("RealWorldStocks.UI.Views.{0}", sourcePageName));
 
             App.RootFrame.Navigate(type, parameter ?? sourcePageName);
         }

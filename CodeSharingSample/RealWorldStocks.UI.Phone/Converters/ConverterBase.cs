@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Globalization;
-
-#if NETFX_CORE
-using Windows.UI;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Media;
-#else
+#if WINDOWS_PHONE
 using System.Windows.Data;
-using System.Windows.Media;
+#endif
+#if NETFX_CORE
+using Windows.UI.Xaml.Data;
 #endif
 
-namespace RealWorldStocks.UI.Phone.Converters
+namespace RealWorldStocks.UI.Converters
 {   
     public abstract class ConverterBase : IValueConverter
     {

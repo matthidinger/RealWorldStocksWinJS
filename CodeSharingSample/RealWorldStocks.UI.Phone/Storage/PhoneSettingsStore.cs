@@ -3,7 +3,7 @@ using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 using RealWorldStocks.Core.Storage;
 
-namespace RealWorldStocks.UI.Phone.Storage
+namespace RealWorldStocks.UI.Storage
 {
     public class PhoneSettingsStore : ISettingsStore
     {
