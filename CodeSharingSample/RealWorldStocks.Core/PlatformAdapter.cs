@@ -18,5 +18,14 @@ namespace RealWorldStocks.Core
         public abstract Task InvokeAsync(Action actionToInvoke);
 
         public abstract ISettingsStore Settings { get; }
+
+
+        //public override string DeviceModel
+        //{
+        //    get
+        //    {
+        //        return String.Format("{0} {1} {2}", DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName, DeviceStatus.DeviceHardwareVersion);
+        //    }
+        //}
     }
 }

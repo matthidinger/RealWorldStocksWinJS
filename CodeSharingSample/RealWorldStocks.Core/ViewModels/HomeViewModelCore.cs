@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using RealWorldStocks.Core.Models;
 
-namespace RealWorldStocks.Core.BaseViewModels
+namespace RealWorldStocks.Core.ViewModels
 {
-    public abstract class HomeViewModelBase : NotifyObject
+    public abstract class HomeViewModelCore : NotifyObject
     {
-        protected HomeViewModelBase()
+        protected HomeViewModelCore()
         {
             WatchListItems = new ObservableCollection<StockSnapshot>();
             News = new ObservableCollection<News>();
@@ -23,7 +23,7 @@ namespace RealWorldStocks.Core.BaseViewModels
             set
             {
                 _isBusy = value;
-                NotifyOfPropertyChange(() => IsBusy);
+                NotifyOfPropertyChange(() => IsBusy); 
             }
         }
 

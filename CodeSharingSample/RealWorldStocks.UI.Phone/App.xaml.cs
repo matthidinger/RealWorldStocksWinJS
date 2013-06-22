@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RealWorldStocks.Core;
-using RealWorldStocks.UI.Phone.Resources;
-using RealWorldStocks.UI.Phone.ViewModels;
+using RealWorldStocks.UI.Resources;
+using RealWorldStocks.UI.ViewModels;
 
-namespace RealWorldStocks.UI.Phone
+namespace RealWorldStocks.UI
 {
     public partial class App : Application
     {
@@ -19,23 +18,6 @@ namespace RealWorldStocks.UI.Phone
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
-
-        private static MainViewModel _viewModel;
-
-        /// <summary>
-        /// A static ViewModel used by the views to bind against.
-        /// </summary>
-        public static MainViewModel ViewModel
-        {
-            get
-            {
-                // Delay creation of the view model until necessary
-                if (_viewModel == null)
-                    _viewModel = new MainViewModel();
-
-                return _viewModel;
-            }
-        }
 
         /// <summary>
         /// Constructor for the Application object.

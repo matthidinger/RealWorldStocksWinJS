@@ -1,13 +1,13 @@
 ﻿using System;
 using RealWorldStocks.Core;
-using RealWorldStocks.UI.WinRT.ViewModels;
-using RealWorldStocks.UI.WinRT.Views;
+using RealWorldStocks.UI.ViewModels;
+using RealWorldStocks.UI.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace RealWorldStocks.UI.WinRT
+namespace RealWorldStocks.UI
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -15,23 +15,6 @@ namespace RealWorldStocks.UI.WinRT
     sealed partial class App : Application
     {
         public static Frame RootFrame { get; private set; }
-
-        private static MainViewModel _viewModel;
-
-        /// <summary>
-        /// A static ViewModel used by the views to bind against.
-        /// </summary>
-        public static MainViewModel ViewModel
-        {
-            get
-            {
-                // Delay creation of the view model until necessary
-                if (_viewModel == null)
-                    _viewModel = new MainViewModel();
-
-                return _viewModel;
-            }
-        }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

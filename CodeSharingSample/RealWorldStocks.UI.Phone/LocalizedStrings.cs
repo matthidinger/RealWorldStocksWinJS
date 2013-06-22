@@ -1,6 +1,6 @@
-﻿using RealWorldStocks.UI.Phone.Resources;
+﻿using RealWorldStocks.UI.Resources;
 
-namespace RealWorldStocks.UI.Phone
+namespace RealWorldStocks.UI
 {
     /// <summary>
     /// Provides access to string resources.

@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace RealWorldStocks.UI.WinRT.Models
+namespace RealWorldStocks.UI.Models
 {
     public class Group
     {

@@ -2,7 +2,7 @@
 using RealWorldStocks.Core.Storage;
 using Windows.Storage;
 
-namespace RealWorldStocks.UI.WinRT.Storage
+namespace RealWorldStocks.UI.Storage
 {
     public class WindowsSettingsStore : ISettingsStore
     {

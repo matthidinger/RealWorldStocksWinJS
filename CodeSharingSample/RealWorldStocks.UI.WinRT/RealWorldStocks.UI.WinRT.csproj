@@ -7,7 +7,7 @@
     <ProjectGuid>{10D4A141-D7D8-4396-900E-4B88B8AC8D8E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RealWorldStocks.UI.WinRT</RootNamespace>
+    <RootNamespace>RealWorldStocks.UI</RootNamespace>
     <AssemblyName>RealWorldStocks.UI.WinRT</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
@@ -121,9 +121,6 @@
     </Compile>
     <Compile Include="..\RealWorldStocks.UI.Phone\Converters\RelativeDateTimeConverter.cs">
       <Link>Converters\RelativeDateTimeConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\RealWorldStocks.UI.Phone\ViewModels\MainViewModel.cs">
-      <Link>ViewModels\MainViewModel.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

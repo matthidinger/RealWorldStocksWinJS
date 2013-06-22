@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RealWorldStocks.UI.Phone.Converters
+namespace RealWorldStocks.UI.Converters
 {
     public class RelativeDateTimeConverter : ConverterBase
     {

@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
 using RealWorldStocks.Core;
 using RealWorldStocks.Core.Models;
+using RealWorldStocks.Core.ViewModels;
 
-namespace RealWorldStocks.UI.Phone.ViewModels
+namespace RealWorldStocks.UI.ViewModels
 {
-    public class HomeViewModel : Core.BaseViewModels.HomeViewModelBase
+    public class HomeViewModel : HomeViewModelCore
     {
         public override async Task LoadAsync()
         {

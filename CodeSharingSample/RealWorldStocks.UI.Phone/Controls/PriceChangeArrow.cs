@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 #endif
 
-namespace RealWorldStocks.UI.Phone.Controls
+namespace RealWorldStocks.UI.Controls
 {
     [TemplateVisualState(Name = "Positive", GroupName = "PriceStates")]
     [TemplateVisualState(Name = "Negative", GroupName = "PriceStates")]
